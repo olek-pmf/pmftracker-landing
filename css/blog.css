@@ -290,6 +290,115 @@
 .blog-back { display: inline-flex; align-items: center; gap: .4rem; font-size: .9rem; font-weight: 600; color: var(--blog-muted); margin-bottom: 1.5rem; }
 .blog-back:hover { color: var(--blog-indigo); text-decoration: none; }
 
+/* ==========================================================================
+   PMF Score Calculator widget (reusable — also embeddable in articles)
+   ========================================================================== */
+.pmf-calc {
+  border: 1px solid var(--blog-line);
+  border-radius: 18px;
+  background: #fff;
+  padding: 1.75rem;
+  box-shadow: 0 24px 60px -36px rgba(15, 23, 42, .4);
+}
+.pmf-calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.75rem; align-items: stretch; }
+.pmf-calc-inputs { display: flex; flex-direction: column; gap: 1rem; }
+.pmf-calc-field { display: flex; flex-direction: column; gap: .35rem; }
+.pmf-calc-field label { font-size: .92rem; font-weight: 600; color: var(--blog-ink); }
+.pmf-calc-field .pmf-calc-hint { font-size: .78rem; font-weight: 500; color: var(--blog-muted); }
+.pmf-calc-field input {
+  font-family: inherit;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--blog-ink);
+  border: 1px solid var(--blog-line);
+  border-radius: 10px;
+  padding: .7rem .85rem;
+  width: 100%;
+  background: var(--blog-bg-soft);
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.pmf-calc-field input:focus {
+  outline: none;
+  border-color: var(--blog-indigo);
+  box-shadow: 0 0 0 3px var(--blog-indigo-soft);
+  background: #fff;
+}
+.pmf-calc-field.is-key label { color: var(--blog-indigo); }
+.pmf-calc-field.is-key input { border-color: var(--blog-indigo-border); }
+
+.pmf-calc-result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #0f172a 0%, #312e81 100%);
+  border-radius: 14px;
+  padding: 1.5rem 1.25rem;
+  color: #fff;
+}
+.pmf-calc-score { font-size: clamp(3rem, 9vw, 4.25rem); font-weight: 800; line-height: 1; letter-spacing: -.03em; }
+.pmf-calc-total { font-size: .85rem; color: #94a3b8; margin-top: .35rem; }
+.pmf-calc-verdict {
+  font-size: 1rem; font-weight: 700; margin-top: 1rem; line-height: 1.35;
+  min-height: 2.6em; display: flex; align-items: center; justify-content: center;
+}
+.pmf-calc-verdict[data-tone="strong"] { color: #6ee7b7; }
+.pmf-calc-verdict[data-tone="good"] { color: #86efac; }
+.pmf-calc-verdict[data-tone="mid"] { color: #fcd34d; }
+.pmf-calc-verdict[data-tone="low"] { color: #fca5a5; }
+.pmf-calc-verdict[data-tone="neutral"] { color: #cbd5e1; font-weight: 600; }
+
+/* score bar with a 40% threshold marker */
+.pmf-calc-bar { position: relative; height: 12px; border-radius: 999px; background: rgba(255,255,255,.14); margin-top: 1.25rem; overflow: visible; }
+.pmf-calc-bar-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, #818cf8, #34d399); width: 0; transition: width .35s ease; }
+.pmf-calc-threshold { position: absolute; top: -6px; bottom: -6px; left: 40%; width: 2px; background: #fff; }
+.pmf-calc-threshold span {
+  position: absolute; top: -1.55rem; left: 50%; transform: translateX(-50%);
+  font-size: .68rem; font-weight: 700; color: #fff; white-space: nowrap;
+}
+.pmf-calc-reliability { font-size: .82rem; color: var(--blog-muted); margin-top: 1rem; min-height: 2.4em; }
+.pmf-calc-foot { margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; justify-content: space-between; }
+.pmf-calc-formula { font-size: .82rem; color: var(--blog-muted); }
+.pmf-calc-formula code { background: var(--blog-bg-soft); border: 1px solid var(--blog-line); border-radius: 6px; padding: .15rem .45rem; font-size: .8rem; color: var(--blog-ink); }
+
+@media (max-width: 720px) {
+  .pmf-calc-grid { grid-template-columns: 1fr; }
+}
+
+/* ==========================================================================
+   Landing-page sections (LP-02 and future LPs)
+   ========================================================================== */
+.lp-hero { text-align: center; max-width: 760px; margin: 0 auto 2.5rem; padding: 0 1.5rem; }
+.lp-hero h1 { font-size: clamp(2.2rem, 5.5vw, 3.4rem); line-height: 1.06; letter-spacing: -.02em; color: var(--blog-ink); margin: 1rem 0; }
+.lp-hero p { font-size: 1.2rem; color: var(--blog-muted); margin: 0 auto 1.75rem; max-width: 620px; }
+.lp-hero-cta { display: inline-flex; align-items: center; gap: .5rem; background: var(--blog-indigo); color: #fff !important; font-weight: 700; font-size: 1.05rem; padding: .9rem 1.9rem; border-radius: 12px; text-decoration: none !important; transition: transform .15s ease, box-shadow .15s ease; }
+.lp-hero-cta:hover { transform: translateY(-2px); box-shadow: 0 16px 36px -18px var(--blog-indigo); }
+.lp-hero-sub { display: block; margin-top: .85rem; font-size: .85rem; color: var(--blog-muted); }
+
+.lp-section { max-width: var(--blog-max); margin: 0 auto; padding: 3.25rem 1.5rem 0; }
+.lp-section.is-wide { max-width: 980px; }
+.lp-section h2 { font-size: clamp(1.6rem, 3.4vw, 2.1rem); line-height: 1.15; letter-spacing: -.015em; color: var(--blog-ink); margin: 0 0 1rem; }
+.lp-section > p { font-size: 1.12rem; line-height: 1.7; color: var(--blog-body); margin: 0 0 1.2rem; }
+.lp-calc-wrap { max-width: 880px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* score-band cards (22 / 40 / 58) */
+.lp-bands { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+.lp-band { border: 1px solid var(--blog-line); border-radius: 14px; padding: 1.4rem; }
+.lp-band .lp-band-num { font-size: 2.1rem; font-weight: 800; letter-spacing: -.02em; color: var(--blog-ink); }
+.lp-band .lp-band-label { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--blog-indigo); margin: .35rem 0 .5rem; }
+.lp-band p { font-size: .95rem; color: var(--blog-muted); margin: 0; }
+.lp-band.is-good { border-color: var(--blog-indigo-border); background: var(--blog-indigo-soft); }
+
+/* feature list */
+.lp-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; margin-top: 1.5rem; }
+.lp-feature h3 { font-size: 1.15rem; color: var(--blog-ink); margin: 0 0 .4rem; }
+.lp-feature p { font-size: .98rem; color: var(--blog-muted); margin: 0; line-height: 1.6; }
+
+/* social proof quote */
+.lp-quote { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
+.lp-quote blockquote { border-left: 4px solid var(--blog-indigo); margin: 0; padding: .35rem 0 .35rem 1.5rem; font-size: 1.3rem; line-height: 1.45; font-weight: 600; color: var(--blog-ink); }
+.lp-quote cite { display: block; margin-top: .75rem; font-size: .95rem; font-weight: 600; color: var(--blog-muted); font-style: normal; }
+
 @media (max-width: 640px) {
   .blog-shell { padding-top: 5.5rem; }
   .article-body { font-size: 1.08rem; }

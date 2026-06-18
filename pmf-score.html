@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>PMF Score Calculator — Measure Product-Market Fit Against the 40% Rule | PMFtracker</title>
+<link href="https://www.pmftracker.com/pmf-score" rel="canonical"/>
+<meta name="description" content="Free PMF score calculator. Enter your Sean Ellis survey responses and instantly see your product-market fit score against the 40% rule — then track it over time with PMFtracker."/>
+<meta content="PMF Score Calculator — Measure Product-Market Fit Against the 40% Rule" property="og:title"/>
+<meta content="Enter your survey responses, get your PMF score instantly, and see where you stand against the 40% threshold." property="og:description"/>
+<meta content="https://www.pmftracker.com/pmf-score" property="og:url"/>
+<meta content="https://www.pmftracker.com/images/og-image.avif" property="og:image"/>
+<meta property="og:type" content="website"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="/css/pmftrackerr.webflow.shared.53ff0c310.css" rel="stylesheet" type="text/css"/>
+<link href="/css/blog.css" rel="stylesheet" type="text/css"/>
+<link href="/images/link-20-e2-86-92-20pmf-20tracker.avif" rel="icon"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"PMF Score Calculator","applicationCategory":"BusinessApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Free calculator for the Sean Ellis product-market fit score. Enter survey responses to get your PMF score against the 40% rule.","url":"https://www.pmftracker.com/pmf-score","publisher":{"@type":"Organization","name":"PMFtracker","logo":{"@type":"ImageObject","url":"https://www.pmftracker.com/images/links.avif"}}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is the PMF score calculated?","acceptedAnswer":{"@type":"Answer","text":"The PMF score is the percentage of valid survey respondents who say they'd be 'very disappointed' if they could no longer use your product. Divide the number of 'very disappointed' responses by the total valid responses and multiply by 100."}},{"@type":"Question","name":"What is a good PMF score?","acceptedAnswer":{"@type":"Answer","text":"40% or higher is the Sean Ellis benchmark for product-market fit. Above 50% is strong, must-have territory. Below 40% means you're not there yet, but the survey data shows who to build for."}},{"@type":"Question","name":"What counts as a valid response?","acceptedAnswer":{"@type":"Answer","text":"Responses from engaged users who answered very, somewhat, or not disappointed. Exclude anyone who selected 'N/A — I no longer use it,' since they've already churned and would distort the score."}},{"@type":"Question","name":"How many responses do I need for an accurate PMF score?","acceptedAnswer":{"@type":"Answer","text":"30 to 40 responses give a directional read; 100 or more give a reliable score you can show investors."}}]}
+</script>
+</head>
+<body class="body blog-page">
+
+<!-- ===== NAV ===== -->
+<div data-animation="default" class="navbar_component w-nav" data-easing2="ease" data-easing="ease" data-collapse="medium" role="banner" data-duration="400"><div class="navbar_container"><a href="/" class="navbar_logo-link w-nav-brand"><img src="/images/link-20-e2-86-92-20pmf-20tracker.avif" loading="lazy" alt="Logo of PMF Tracker SaaS Firm" class="navbar-logo"/></a><nav role="navigation" class="navbar_menu is-page-height-tablet w-nav-menu"><a href="/#work" class="navbar-link w-nav-link">How it works?</a><a href="/#solution" class="navbar-link w-nav-link">Solution</a><a href="/#pricing" class="navbar-link w-nav-link">Pricing</a><a href="/blog" class="navbar-link w-nav-link">Blog</a><a href="https://app.pmftracker.com/" class="button is-icon button-gray hide-desktop w-inline-block"><div class="button-text-purple">Get started</div></a></nav><div class="navbar_button-wrap"><a href="https://app.pmftracker.com/" class="button is-icon button-gray hide-tablet w-inline-block"><div class="button-text-purple">Get started</div><div class="icon-1x1-small purple-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none"><path d="M3.86336 10H17.1967M17.1967 10L12.1967 5M17.1967 10L12.1967 15" stroke="#4D455E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></a><div class="navbar_menu-button w-nav-button"><div class="rl_menu-icon2"><div class="rl_menu-icon2_line-top"></div><div class="rl_menu-icon2_line-middle"><div class="rl_menu-icon_line-middle-inner"></div></div><div class="rl_menu-icon2_line-bottom"></div></div></div></div></div></div>
+
+<main class="blog-shell">
+
+  <!-- ===== HERO ===== -->
+  <header class="lp-hero">
+    <span class="blog-eyebrow">PMF Score Calculator</span>
+    <h1>What's your product-market fit score?</h1>
+    <p>Plug in your Sean Ellis survey responses and see your PMF score instantly — measured against the 40% rule that separates startups that take off from startups that stall.</p>
+    <a href="#calculator" class="lp-hero-cta">Calculate my score ↓</a>
+    <span class="lp-hero-sub">Free · No signup · Based on the Sean Ellis 40% methodology</span>
+  </header>
+
+  <!-- ===== CALCULATOR ===== -->
+  <section id="calculator" class="lp-calc-wrap">
+    <div class="pmf-calc" data-state="empty">
+      <div class="pmf-calc-grid">
+        <div class="pmf-calc-inputs">
+          <div class="pmf-calc-field is-key">
+            <label for="pmf-very">😍 Very disappointed</label>
+            <span class="pmf-calc-hint">The only answer that counts toward your score.</span>
+            <input id="pmf-very" data-pmf="very" type="number" min="0" inputmode="numeric" placeholder="0"/>
+          </div>
+          <div class="pmf-calc-field">
+            <label for="pmf-somewhat">🙂 Somewhat disappointed</label>
+            <span class="pmf-calc-hint">Your growth lever — the people to convert.</span>
+            <input id="pmf-somewhat" data-pmf="somewhat" type="number" min="0" inputmode="numeric" placeholder="0"/>
+          </div>
+          <div class="pmf-calc-field">
+            <label for="pmf-not">😐 Not disappointed</label>
+            <span class="pmf-calc-hint">Usually the wrong audience for you.</span>
+            <input id="pmf-not" data-pmf="not" type="number" min="0" inputmode="numeric" placeholder="0"/>
+          </div>
+        </div>
+
+        <div class="pmf-calc-result">
+          <div class="pmf-calc-score" data-pmf="score">0%</div>
+          <div class="pmf-calc-total" data-pmf="total">0 valid responses</div>
+          <div class="pmf-calc-bar">
+            <div class="pmf-calc-bar-fill" data-pmf="fill"></div>
+            <div class="pmf-calc-threshold"><span>40% = fit</span></div>
+          </div>
+          <div class="pmf-calc-verdict" data-pmf="verdict" data-tone="neutral">Enter your responses to see your score</div>
+        </div>
+      </div>
+
+      <div class="pmf-calc-reliability" data-pmf="reliability"></div>
+      <div class="pmf-calc-foot">
+        <div class="pmf-calc-formula">Formula: <code>very disappointed ÷ total valid responses × 100</code></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHAT YOUR SCORE MEANS ===== -->
+  <section class="lp-section is-wide">
+    <h2>What your score actually means</h2>
+    <p>The 40% line isn't arbitrary. Sean Ellis found it by surveying nearly a hundred startups: the ones above it had a clear path to growth, the ones below struggled no matter how hard they pushed on marketing. Here's how to read where you land — using the most famous trajectory in PMF history.</p>
+    <div class="lp-bands">
+      <div class="lp-band">
+        <div class="lp-band-num">22%</div>
+        <div class="lp-band-label">Where Superhuman started</div>
+        <p>Below the line — and easy to give up here. Instead, a starting baseline to improve. A low score is a to-do list, not a verdict.</p>
+      </div>
+      <div class="lp-band is-good">
+        <div class="lp-band-num">40%</div>
+        <div class="lp-band-label">The threshold</div>
+        <p>Product-market fit. A meaningful slice of users depend on you. Growth investment starts to pay back instead of leaking out as churn.</p>
+      </div>
+      <div class="lp-band">
+        <div class="lp-band-num">58%</div>
+        <div class="lp-band-label">Where Superhuman landed</div>
+        <p>Strong, must-have territory — past Slack's ~51%. Products here grow by word of mouth because users can't shut up about them.</p>
+      </div>
+    </div>
+    <p style="margin-top:1.5rem">Superhuman didn't get lucky — they engineered 22% up to 58% with a repeatable loop. <a href="/blog/superhuman-pmf-engine">See exactly how they did it →</a></p>
+  </section>
+
+  <!-- ===== THE PROBLEM / SOLUTION ===== -->
+  <section class="lp-section">
+    <h2>A score you calculate once is already out of date</h2>
+    <p>This calculator gives you a number today. But product-market fit isn't a moment you reach — it's a number that moves. A pivot, a redesign, or a flood of the wrong users can quietly drag your score back down while your dashboard still looks fine.</p>
+    <p>The founders who keep fit treat it like revenue: a metric they watch on a cadence. The problem is that re-running the survey by hand — Typeform, CSV export, a spreadsheet to calculate, a slide for investors — is miserable enough that most founders do it once and never again. Which defeats the entire point.</p>
+    <p><strong>PMFtracker runs this loop for you</strong> so the score becomes a trend you can actually watch.</p>
+    <div class="lp-features">
+      <div class="lp-feature">
+        <h3>Survey on autopilot</h3>
+        <p>The Sean Ellis question, pre-loaded and sent to your engaged users in-app or by email.</p>
+      </div>
+      <div class="lp-feature">
+        <h3>Score tracked over time</h3>
+        <p>Not a one-off number — a longitudinal trend line, calculated automatically every cycle.</p>
+      </div>
+      <div class="lp-feature">
+        <h3>ICP from your fans</h3>
+        <p>Your "very disappointed" users auto-segmented and profiled, so you know who to build for.</p>
+      </div>
+      <div class="lp-feature">
+        <h3>Investor-ready report</h3>
+        <p>The trend, the ICP, and what users would miss — packaged into evidence VCs actually want.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SOCIAL PROOF ===== -->
+  <section class="lp-section">
+    <div class="lp-quote">
+      <blockquote>"To increase your product-market fit score, spend half your time doubling down on what users already love, and the other half addressing what holds others back."</blockquote>
+      <cite>— Rahul Vohra, Founder &amp; CEO of Superhuman</cite>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="lp-calc-wrap">
+    <div class="cta-box">
+      <h3>Track your PMF score over time — not just once</h3>
+      <p>Get your baseline in five minutes, then watch the number climb. PMFtracker turns this calculator into a living dashboard your team and investors can trust.</p>
+      <a href="https://app.pmftracker.com/" class="cta-btn">Start free →</a>
+      <span class="cta-sub">No credit card · The Sean Ellis template is pre-loaded</span>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq-section">
+    <h2>Frequently asked questions</h2>
+    <div class="faq-item">
+      <h3>How is the PMF score calculated?</h3>
+      <p>It's the percentage of valid respondents who'd be "very disappointed" without your product: very disappointed ÷ total valid responses × 100. Only "very disappointed" counts toward the score.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What is a good PMF score?</h3>
+      <p>40% or higher is the Sean Ellis benchmark for product-market fit. Above 50% is strong, must-have territory. Below 40% means you're not there yet — but the survey data tells you who to build for.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What counts as a valid response?</h3>
+      <p>Answers from engaged users who chose very, somewhat, or not disappointed. Exclude anyone who picked "N/A — I no longer use it," since they've already churned and would skew your score downward.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How many responses do I need?</h3>
+      <p>30–40 give a directional read; 100+ give a reliable score you can put in front of investors. Don't wait for a big user base — start as soon as you have ~40 engaged users.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Who should I survey?</h3>
+      <p>Engaged users only — people who used the core of your product at least twice in the last two weeks. <a href="/blog/how-to-run-a-pmf-survey">Here's the full step-by-step on running the survey.</a></p>
+    </div>
+  </section>
+
+  <!-- ===== RELATED ===== -->
+  <nav class="related">
+    <h2>Learn the methodology</h2>
+    <ul class="related-list">
+      <li><a href="/blog/sean-ellis-40-percent-rule">The Sean Ellis 40% rule: everything founders need to know →</a></li>
+      <li><a href="/blog/how-to-run-a-pmf-survey">How to run a PMF survey (step by step, with the exact questions) →</a></li>
+      <li><a href="/blog/how-to-improve-pmf-score">How to improve your PMF score (from below 40% to funded) →</a></li>
+      <li><a href="/blog/how-to-measure-product-market-fit">The complete guide to measuring product-market fit in 2026 →</a></li>
+    </ul>
+  </nav>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer_component overflow-hidden"><div class="padding-global is-footer"><div class="container-large"><div class="w-layout-grid footer_top-wrapper"><a href="/" class="footer_logo-link w-nav-brand"><img src="/images/links.avif" loading="lazy" alt="PMF Brand Mark - Go back to the home page" class="footer_logo"/></a><div class="w-layout-grid footer_link-list"><div class="footer_mail_wrap"><div class="footer_header_wrap"><p class="heading-style-h6">Get in Touch</p><p class="footer-text">We&#x27;re here to help. You can reach us <br/>via email or our social media.</p></div><div class="footer_mail"><img src="/images/ic_sharp-mail.webp" loading="lazy" alt="" class="mail"/><a href="mailto:hello@pmftracker.com?subject=Hi%20there" class="footer-mail-text">hello@pmftracker.com</a></div></div><div class="footer_link_wrap"><a href="/#work" class="footer-link">How it works?</a><a href="/#pricing" class="footer-link">Pricing</a><a href="/blog" class="footer-link">Blog</a><a href="https://app.pmftracker.com/" class="footer-link">Start Free</a></div><div class="footer_link_wrap"><a href="https://www.linkedin.com/company/pmftracker" target="_blank" class="footer-link">LinkedIn</a></div></div></div><div class="divider_container"><div class="footer_line-divider"></div></div><div class="w-layout-grid footer_bottom-wrap"><div class="footer_settings_wrap"><a href="/terms-and-conditions" class="rl_footer4_legal-link">Terms and Conditions</a><a href="/privacy-policy" class="rl_footer4_legal-link">Privacy Policy</a><a href="/privacy-policy" class="rl_footer4_legal-link">Cookies Settings</a></div><div class="footer_credit-text">© 2025 PMFtracker. All rights reserved.</div></div></div></div></div>
+
+<script src="/js/jquery.js" type="text/javascript"></script>
+<script src="/js/webflow.schunk.36b8fb49256177c8.js" type="text/javascript"></script>
+<script src="/js/webflow.schunk.9d5021b1f222040f.js" type="text/javascript"></script>
+<script src="/js/webflow-script.js" type="text/javascript"></script>
+<script src="/js/pmf-calculator.js" type="text/javascript"></script>
+</body>
+</html>
