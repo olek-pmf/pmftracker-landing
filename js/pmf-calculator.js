@@ -13,27 +13,30 @@
     return n;
   }
 
+  // Bands mirror the PMFtracker app: >=40 Strong PMF Achieved, >=30 Close to PMF,
+  // <30 PMF Not Achieved. (>=50 surfaced as exceptional for extra nuance.)
   function verdict(score, total) {
     if (total === 0) {
       return { label: "Enter your responses to see your score", tone: "neutral" };
     }
     if (score >= 50) {
-      return { label: "Strong fit — must-have territory", tone: "strong" };
+      return { label: "Exceptional — deep must-have fit. Focus on scaling.", tone: "strong" };
     }
     if (score >= 40) {
-      return { label: "Product-market fit — you're over the line", tone: "good" };
+      return { label: "Strong PMF achieved — focus on growth & scaling.", tone: "good" };
     }
-    if (score >= 25) {
-      return { label: "Not there yet — but you have a real foothold to build on", tone: "mid" };
+    if (score >= 30) {
+      return { label: "Close to PMF — you're nearly there. Keep iterating.", tone: "mid" };
     }
-    return { label: "Early — focus on the users who'd be very disappointed", tone: "low" };
+    return { label: "PMF not yet — focus on your very-disappointed users.", tone: "low" };
   }
 
+  // Reliability mirrors the app's data-quality bands: high >=100, medium >=40, low <40.
   function reliability(total) {
     if (total === 0) return "";
-    if (total < 30) return "Under 30 responses — read the comments, treat the % as directional only.";
-    if (total < 100) return "30–100 responses — a directional signal you can act on.";
-    return "100+ responses — a reliable score you can show investors.";
+    if (total < 40) return "Under 40 responses — directional only. Aim for 40+ before you act on it.";
+    if (total < 100) return "40+ responses — solid data you can act on.";
+    return "100+ responses — a high-confidence score you can show investors.";
   }
 
   function initOne(root) {
