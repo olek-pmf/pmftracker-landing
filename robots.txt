@@ -1,0 +1,7 @@
+# robots.txt for PMFtracker — https://www.pmftracker.com
+# Allow all crawlers full access for maximum discoverability.
+User-agent: *
+Allow: /
+
+# XML sitemap of indexable pages
+Sitemap: https://www.pmftracker.com/sitemap.xml
