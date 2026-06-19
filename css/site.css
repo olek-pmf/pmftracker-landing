@@ -31,8 +31,19 @@
 }
 
 /* ---------- Nav "Tools" dropdown ---------- */
-.pmf-navdrop { position: relative; display: inline-block; }
-.pmf-navdrop-toggle { cursor: pointer; }
+.pmf-navdrop { position: relative; display: inline-flex; align-items: center; }
+.pmf-navdrop-toggle { cursor: pointer; display: inline-flex; align-items: center; gap: .32rem; }
+.pmf-navdrop-toggle::after {
+  content: "";
+  width: 0; height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid currentColor;
+  opacity: .55;
+  transition: transform .15s ease;
+}
+.pmf-navdrop:hover .pmf-navdrop-toggle::after,
+.pmf-navdrop:focus-within .pmf-navdrop-toggle::after { transform: rotate(180deg); }
 .pmf-navdrop-menu {
   position: absolute;
   top: 100%;

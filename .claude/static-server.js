@@ -1,4 +1,0 @@
-const http=require('http'),fs=require('fs'),path=require('path');
-const ROOT='/Users/aleksanderuznanski/Documents/2.2 Startup/1. PMFtracker/Github/pmftracker-landing';
-const types={'.html':'text/html','.css':'text/css','.js':'text/javascript','.avif':'image/avif','.webp':'image/webp','.png':'image/png','.svg':'image/svg+xml','.xml':'application/xml','.ttf':'font/ttf'};
-http.createServer((req,res)=>{let p=decodeURIComponent(req.url.split('?')[0]);let fp=path.join(ROOT,p);try{if(fs.statSync(fp).isDirectory())fp=path.join(fp,'index.html');}catch(e){if(fs.existsSync(fp+'.html'))fp=fp+'.html';}fs.readFile(fp,(e,d)=>{if(e){res.writeHead(404);res.end('404');return;}res.writeHead(200,{'Content-Type':types[path.extname(fp)]||'application/octet-stream'});res.end(d);});}).listen(4599,()=>console.log('listening'));
