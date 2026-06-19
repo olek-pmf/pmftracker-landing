@@ -1,0 +1,87 @@
+/* ==========================================================================
+   PMFtracker — shared site chrome (footer + nav dropdown)
+   Linked on every page so the footer and nav are identical site-wide.
+   ========================================================================== */
+
+/* ---------- Categorized footer ---------- */
+.footer_link-list {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 2.5rem 3.5rem;
+  grid-template-columns: none !important;
+  align-items: flex-start !important;
+  place-items: start !important;
+}
+.footer_mail_wrap { min-width: 15rem; }
+.pmf-foot-col { display: flex; flex-direction: column; gap: .55rem; min-width: 9.5rem; }
+.pmf-foot-h {
+  color: #fff;
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-weight: 700;
+  opacity: .6;
+  margin: 0 0 .35rem;
+}
+.pmf-foot-col .footer-link { color: #ffffffcc; text-decoration: none; }
+.pmf-foot-col .footer-link:hover { color: #fff; }
+@media (max-width: 767px) {
+  .footer_link-list { gap: 2rem; }
+  .pmf-foot-col { min-width: 8rem; }
+}
+
+/* ---------- Nav "Tools" dropdown ---------- */
+.pmf-navdrop { position: relative; display: inline-block; }
+.pmf-navdrop-toggle { cursor: pointer; }
+.pmf-navdrop-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 240px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px -24px rgba(15, 23, 42, .4);
+  padding: .5rem;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity .15s ease, transform .15s ease, visibility .15s;
+  z-index: 1000;
+}
+.pmf-navdrop:hover .pmf-navdrop-menu,
+.pmf-navdrop:focus-within .pmf-navdrop-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.pmf-navdrop-menu a {
+  display: block;
+  padding: .55rem .75rem;
+  border-radius: 8px;
+  color: #0f172a;
+  font-size: .95rem;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.pmf-navdrop-menu a:hover { background: #eef2ff; color: #4f46e5; }
+
+/* On tablet/mobile the Webflow nav collapses (data-collapse="medium" = 991px);
+   show the dropdown items inline inside the open hamburger menu. */
+@media (max-width: 991px) {
+  .pmf-navdrop { display: block; width: 100%; }
+  .pmf-navdrop-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    padding: .25rem 0 .25rem 1rem;
+  }
+  .pmf-navdrop-menu a { color: inherit; }
+}
