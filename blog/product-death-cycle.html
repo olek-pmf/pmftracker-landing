@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>The Product Death Cycle: Why "What Features Do You Want?" Is Killing Your Product | PMFtracker</title>
+<link href="https://www.pmftracker.com/blog/product-death-cycle" rel="canonical"/>
+<meta name="description" content="Asking customers what features they want feels customer-centric. It's actually the fastest way to kill your product. Here's David Bland's Product Death Cycle, why it traps good teams, and the three steps to break out of it — plus the one metric that tells you you're escaping."/>
+<meta content="The Product Death Cycle: Why &quot;What Features Do You Want?&quot; Is Killing Your Product" property="og:title"/>
+<meta content="It's not the customer's job to design the solution. The Product Death Cycle, why building from feature requests fails, and how to break free." property="og:description"/>
+<meta content="https://www.pmftracker.com/blog/product-death-cycle" property="og:url"/>
+<meta content="https://www.pmftracker.com/images/og-image.avif" property="og:image"/>
+<meta property="og:type" content="article"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="/css/pmftrackerr.webflow.shared.53ff0c310.css" rel="stylesheet" type="text/css"/>
+<link href="/css/blog.css" rel="stylesheet" type="text/css"/>
+<link href="/images/link-20-e2-86-92-20pmf-20tracker.avif" rel="icon"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"The Product Death Cycle: Why 'What Features Do You Want?' Is Killing Your Product","description":"David Bland's Product Death Cycle explained: why building from feature requests fails, and the three steps to break out of it.","author":{"@type":"Person","name":"Olek Uznanski","jobTitle":"Founder, PMFtracker","image":"https://www.pmftracker.com/images/au_profile_photo_2025-20copy-201.webp","description":"Product leader who has trained 200+ startups on product-market fit."},"publisher":{"@type":"Organization","name":"PMFtracker","logo":{"@type":"ImageObject","url":"https://www.pmftracker.com/images/links.avif"}},"mainEntityOfPage":"https://www.pmftracker.com/blog/product-death-cycle","datePublished":"2026-06-20","dateModified":"2026-06-20"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the Product Death Cycle?","acceptedAnswer":{"@type":"Answer","text":"A term from David Bland for a trap teams fall into: you launch a feature, ask customers what's missing, build those requested features, nobody uses them, and you repeat — building a product out of feature requests that slowly dies. It fails because customers can describe their problems but it's not their job to design the solution."}},{"@type":"Question","name":"Why is asking customers what features they want a mistake?","acceptedAnswer":{"@type":"Answer","text":"Because it's not the customer's job to know the best solution — they don't know what's feasible or valuable to build. Their feature requests are anecdotal opinions, not validated evidence. Treating those requests as a roadmap means betting big on light evidence and skipping real discovery. Ask what they're trying to achieve, not what features they want."}},{"@type":"Question","name":"How do you break out of the Product Death Cycle?","acceptedAnswer":{"@type":"Answer","text":"Three steps: discover opportunities by digging into customer problems through story-based interviewing; validate solution assumptions with quick experiments before writing code; and measure outcomes, not outputs. The clearest outcome metric is a PMF score — if features you ship aren't moving the percentage of users who'd be very disappointed to lose you, you're still in the cycle."}}]}
+</script>
+<link href="/css/site.css" rel="stylesheet" type="text/css"/>
+<!-- Google tag (gtag.js) -->
+<script>(function(w,i,g){w[g]=w[g]||[];if(typeof w[g].push=='function')w[g].push.apply(w[g],Array.isArray(i)?i:[i]);})(window,['G-VC0KYCG7Q8'],'google_tags_first_party');</script><script async="" src="/v2645sy3qzdjNjhjZDc0ZDk0MDVlMzg5MzkwMGUwYzAy/uEKsnLOoy-BI07P1lc3OiW4LcWA"></script><script type="text/javascript">window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('set', 'developer_id.dZGVlNj', true);gtag('set', 'developer_id.dYWYxNW', true);gtag('js', new Date());gtag('config', 'G-VC0KYCG7Q8');</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KS6486GZ');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body class="body blog-page">
+
+<!-- ===== NAV ===== -->
+<div data-animation="default" class="navbar_component w-nav" data-easing2="ease" data-easing="ease" data-collapse="medium" role="banner" data-duration="400"><div class="navbar_container"><a href="/" class="navbar_logo-link w-nav-brand"><img src="/images/link-20-e2-86-92-20pmf-20tracker.avif" loading="lazy" alt="Logo of PMF Tracker SaaS Firm" class="navbar-logo"/></a><nav role="navigation" class="navbar_menu is-page-height-tablet w-nav-menu"><a href="/#work" class="navbar-link w-nav-link">How it works?</a><a href="/#solution" class="navbar-link w-nav-link">Solution</a><a href="/#pricing" class="navbar-link w-nav-link">Pricing</a><div class="pmf-navdrop"><a tabindex="0" class="navbar-link w-nav-link pmf-navdrop-toggle">Tools</a><div class="pmf-navdrop-menu"><a href="/pmf-score">PMF Score Calculator</a><a href="/sean-ellis-survey">Sean Ellis Survey Template</a><a href="/pmf-investor-report">Investor PMF Report</a></div></div><a href="/blog" class="navbar-link w-nav-link">Blog</a><a href="https://app.pmftracker.com/" class="button is-icon button-gray hide-desktop w-inline-block"><div class="button-text-purple">Get started</div></a></nav><div class="navbar_button-wrap"><a href="https://app.pmftracker.com/" class="button is-icon button-gray hide-tablet w-inline-block"><div class="button-text-purple">Get started</div><div class="icon-1x1-small purple-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none"><path d="M3.86336 10H17.1967M17.1967 10L12.1967 5M17.1967 10L12.1967 15" stroke="#4D455E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></a><div class="navbar_menu-button w-nav-button"><div class="rl_menu-icon2"><div class="rl_menu-icon2_line-top"></div><div class="rl_menu-icon2_line-middle"><div class="rl_menu-icon_line-middle-inner"></div></div><div class="rl_menu-icon2_line-bottom"></div></div></div></div></div></div>
+
+<main class="blog-shell">
+
+  <header class="article-head">
+    <a href="/blog" class="blog-back">← All articles</a>
+    <div class="article-kicker">Product Discovery</div>
+    <h1>The Product Death Cycle: why "what features do you want?" is killing your product</h1>
+    <p class="article-dek">Asking your customers which features they want feels like the most customer-obsessed thing you can do. It's actually the fastest way to build a product nobody uses. Here's David Bland's Product Death Cycle, why it traps good teams, and the one question to ask instead.</p>
+    <div class="article-byline">
+      <div class="article-byline-avatar"><img src="/images/au_profile_photo_2025-20copy-201-p-500.webp" width="44" height="44" alt="Olek Uznanski" loading="lazy"/></div>
+      <div class="article-byline-text">
+        <strong>Olek Uznanski · Founder, PMFtracker</strong>
+        <span>Product leader who's trained 200+ startups on product-market fit</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="blog-wrap">
+    <div class="tldr">
+      <h2>TL;DR</h2>
+      <ul>
+        <li>The fastest way to kill your product is to ask customers <em>"what features do you want?"</em> and build the answers.</li>
+        <li>David Bland's <strong>Product Death Cycle</strong>: launch a feature → ask what's missing → build it → nobody uses it → repeat.</li>
+        <li>It fails because it's <strong>not the customer's job to design the solution</strong> — they don't know what's feasible or valuable. Their requests are opinions, not evidence.</li>
+        <li>Stop asking <em>"What do you want?"</em> Start asking <em>"What are you trying to achieve?"</em></li>
+        <li>Break out: discover opportunities, validate before you build, and <strong>measure outcomes</strong> — a PMF score that doesn't move means you're still in the cycle.</li>
+      </ul>
+    </div>
+  </div>
+
+  <article class="article-body">
+
+    <p>"Just tell me what features you want."</p>
+
+    <p>It sounds like the responsible thing to say. Customer-centric. Humble. You're not assuming you know best — you're <em>listening</em>. And it's one of the single most reliable ways to slowly kill a product.</p>
+
+    <p>I still see product teams do it constantly. They sit across from a customer and ask, point blank, "What do you want?" And in doing so they trigger what David Bland named the <strong>Product Death Cycle</strong>.</p>
+
+    <h2>How the cycle plays out</h2>
+
+    <p>It's a loop, and it feels productive the whole way around — which is exactly why it's so dangerous:</p>
+
+    <div class="callout">
+      <p class="formula">Launch a feature → Ask customers what's missing → Build the requested features → Nobody uses them → Repeat</p>
+    </div>
+
+    <p>Every lap feels like progress. You're shipping. You're "responding to feedback." The backlog is full of real customer requests, so how could you be doing anything wrong? And yet adoption stays flat, the product gets more bloated and less focused, and somewhere around lap four it dawns on you that you've been very busy building things nobody actually uses.</p>
+
+    <div class="pullquote">
+      It's not the customer's job to tell you the solution.
+    </div>
+
+    <h2>Why building from feature requests fails</h2>
+
+    <p>The cycle breaks down for three connected reasons:</p>
+
+    <ul>
+      <li><strong>You moved too fast.</strong> A request goes straight onto the roadmap with no exploration and no validation. You skipped from "a customer said this" to "we're building it" without ever asking whether it solves a real, widespread problem.</li>
+      <li><strong>You bet big on light evidence.</strong> One person's opinion in one conversation gets treated as fact. Anecdote becomes strategy. Ship enough features on that basis and your roadmap is just a pile of loudest-voice requests.</li>
+      <li><strong>Customers don't know the best solution.</strong> And it's genuinely not their job to. They don't know what's technically feasible, what's valuable to build, or what else is possible. They know their world and their frustrations. The solution is <em>your</em> job.</li>
+    </ul>
+
+    <p>This is the core mistake: confusing the customer's expertise in their <em>problem</em> with expertise in your <em>solution</em>. They're the world's leading authority on the first. They know almost nothing useful about the second.</p>
+
+    <h2>The reframe: stop asking "what do you want?"</h2>
+
+    <p>The fix is almost embarrassingly small. Change the question.</p>
+
+    <p>Instead of <em>"What features do you want?"</em>, ask <em>"What are you trying to achieve?"</em> — and then dig into the story behind it. What were you doing when this came up? What did you try? What happened? Where did it hurt?</p>
+
+    <p>That shift moves the conversation from solutions (their weak spot) to problems and goals (their expertise). You walk away with the raw material you actually need — a real understanding of needs and desires — instead of a feature you're now obligated to build and nobody asked to be held accountable for.</p>
+
+    <h2>How to break the cycle</h2>
+
+    <p>Bland's escape route is three steps, and you can start running it this week:</p>
+
+    <h3>1. Discover opportunities</h3>
+    <p>Focus on finding the <em>right problem</em> to solve for your target users. Use story-based interviewing — get them recounting actual past experiences, not predicting what they'd hypothetically use. Past behavior is evidence. Future intentions are wishful thinking.</p>
+
+    <h3>2. Validate solution assumptions</h3>
+    <p>Before you write a line of production code, test your idea cheaply. A prototype, a fake-door test, a quick experiment. Build a culture where every solution is a hypothesis to validate, not a request to fulfill. This is the step the Death Cycle skips entirely — and the one that saves you the most wasted engineering.</p>
+
+    <h3>3. Measure outcomes, not outputs</h3>
+    <p>This is where most teams still go wrong, even after they fix their interviews. They count features shipped (output) instead of whether anything got better (outcome). Twelve features is an output. Users who'd be genuinely upset to lose your product is an outcome. Only one of those tells you the cycle is broken.</p>
+
+    <h2>The metric that proves you've escaped</h2>
+
+    <p>Here's the catch with "measure outcomes": which outcome? Adoption of a single feature is too narrow — you can get people to click a thing and still be drifting nowhere. You need a measure of whether the <em>whole product</em> is becoming more of a must-have.</p>
+
+    <p>That's exactly what a PMF score gives you. Ask your engaged users how they'd feel if they could no longer use your product, and track the percentage who say <strong>"very disappointed."</strong> It's the cleanest outcome metric there is, because it can't be gamed by shipping more stuff. If you're stuck in the Death Cycle — busily building requested features that don't deepen anyone's attachment — that number sits flat no matter how full your changelog gets. When you break out and start solving real problems, it climbs.</p>
+
+    <p>So the score does double duty: it's both your escape hatch and your alarm. A flat PMF score under a busy release schedule is the unmistakable signature of the Product Death Cycle. A rising one is proof you've stopped taking orders and started doing discovery.</p>
+
+    <div class="cta-box">
+      <h3>Find out if your features are actually working</h3>
+      <p>Shipping a lot but not sure it's landing? The free PMF score calculator shows whether your users would genuinely miss you — the outcome that feature counts can't fake.</p>
+      <a href="/pmf-score" class="cta-btn">Try the free PMF score calculator →</a>
+      <span class="cta-sub">No signup. Built on the Sean Ellis 40% method.</span>
+    </div>
+
+    <h2>Putting it to work this week</h2>
+
+    <ol>
+      <li><strong>Audit your last five shipped features.</strong> How many came from a real validated problem, and how many from "a customer asked"? Be honest.</li>
+      <li><strong>Change the question.</strong> In your next interview, ban "what do you want?" Ask "what are you trying to achieve?" and chase the story.</li>
+      <li><strong>Validate before you build.</strong> Put a prototype or fake door in front of users before committing engineering time.</li>
+      <li><strong>Watch the outcome, not the output.</strong> Run the Sean Ellis survey and track your PMF score. If it's flat while you're shipping hard, you're still in the cycle.</li>
+    </ol>
+
+    <p>Building features people request feels safe. It's the riskiest thing you can do. Stop shipping blindly, find out what's actually worth building first — and let the score, not the changelog, tell you whether it's working.</p>
+
+    <div class="cta-box">
+      <h3>Measure the outcome, not the output</h3>
+      <p>PMFtracker runs the Sean Ellis survey, scores how many users would be very disappointed to lose you, and tracks the trend — so you can finally see whether all that shipping is building a must-have or just spinning the Death Cycle.</p>
+      <a href="https://app.pmftracker.com/" class="cta-btn">Measure your PMF score free →</a>
+      <span class="cta-sub">Set up in 5 minutes · No credit card required</span>
+    </div>
+
+  </article>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq-section">
+    <h2>Frequently asked questions</h2>
+    <div class="faq-item">
+      <h3>What is the Product Death Cycle?</h3>
+      <p>A term from David Bland for a trap teams fall into: launch a feature, ask customers what's missing, build those requests, nobody uses them, repeat. You build a product out of feature requests that slowly dies — because customers can describe their problems but it's not their job to design the solution.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Why is asking customers what features they want a mistake?</h3>
+      <p>Because it's not their job to know the best solution — they don't know what's feasible or valuable to build, and their requests are anecdotal opinions, not validated evidence. Treating requests as a roadmap means betting big on light evidence. Ask what they're trying to achieve instead.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What should I ask customers instead?</h3>
+      <p>Ask "What are you trying to achieve?" and dig into the story — what they were doing, what they tried, what happened. That moves the conversation to problems and goals (their expertise) instead of solutions (yours), giving you real material for discovery.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How do I know if I've broken out of the cycle?</h3>
+      <p>Measure outcomes, not outputs. The clearest signal is a PMF score: if the features you ship aren't moving the percentage of users who'd be "very disappointed" to lose your product, you're still in the cycle. A rising score means you've started solving real problems.</p>
+    </div>
+  </section>
+
+  <!-- ===== RELATED ===== -->
+  <nav class="related">
+    <h2>Keep reading</h2>
+    <ul class="related-list">
+      <li><a href="/blog/why-products-fail-product-risks">Why products fail despite flawless execution →</a></li>
+      <li><a href="/blog/no-market-need-ai-discovery">42% of startups build something nobody wants — and AI is making it worse →</a></li>
+      <li><a href="/blog/how-to-run-a-pmf-survey">How to run a PMF survey (step by step, with the exact questions) →</a></li>
+      <li><a href="/pmf-score">Try the free PMF score calculator →</a></li>
+      <li><a href="/blog/how-to-measure-product-market-fit">The complete guide to measuring product-market fit in 2026 →</a></li>
+    </ul>
+  </nav>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer_component overflow-hidden"><div class="padding-global is-footer"><div class="container-large"><div class="w-layout-grid footer_top-wrapper"><a href="/" class="footer_logo-link w-nav-brand"><img src="/images/links.avif" loading="lazy" alt="PMF Brand Mark - Go back to the home page" class="footer_logo"/></a><div class="w-layout-grid footer_link-list"><div class="footer_mail_wrap"><div class="footer_header_wrap"><p class="heading-style-h6">Get in Touch</p><p class="footer-text">We&#x27;re here to help. You can reach us <br/>via email or our social media.</p></div><div class="footer_mail"><img src="/images/ic_sharp-mail.webp" loading="lazy" alt="" class="mail"/><a href="mailto:hello@pmftracker.com?subject=Hi%20there" class="footer-mail-text">hello@pmftracker.com</a></div></div><div class="pmf-foot-col"><p class="pmf-foot-h">Product</p><a href="/#work" class="footer-link">How it works?</a><a href="/#solution" class="footer-link">Solution</a><a href="/#pricing" class="footer-link">Pricing</a><a href="/#faq" class="footer-link">FAQ</a><a href="https://app.pmftracker.com/" class="footer-link">Start Free</a><a href="https://cal.com/pmftracker/product-demo" class="footer-link">Book Demo</a></div><div class="pmf-foot-col"><p class="pmf-foot-h">Tools</p><a href="/pmf-score" class="footer-link">PMF Score Calculator</a><a href="/sean-ellis-survey" class="footer-link">Sean Ellis Survey Template</a><a href="/pmf-investor-report" class="footer-link">Investor PMF Report</a></div><div class="pmf-foot-col"><p class="pmf-foot-h">Articles</p><a href="/blog" class="footer-link">All articles</a><a href="/blog/sean-ellis-40-percent-rule" class="footer-link">The Sean Ellis 40% Rule</a><a href="/blog/superhuman-pmf-engine" class="footer-link">Superhuman: 22% &#8594; 58%</a><a href="/blog/how-to-measure-product-market-fit" class="footer-link">How to Measure PMF</a><a href="/blog/how-to-improve-pmf-score" class="footer-link">Improve Your PMF Score</a></div><div class="pmf-foot-col"><p class="pmf-foot-h">Compare</p><a href="/vs/pmfsurvey" class="footer-link">vs PMFsurvey.com</a><a href="/vs/typeform-spreadsheet" class="footer-link">vs Typeform + Sheets</a></div><div class="pmf-foot-col"><p class="pmf-foot-h">Connect</p><a href="https://www.linkedin.com/company/pmftracker" target="_blank" class="footer-link">LinkedIn</a><a href="mailto:hello@pmftracker.com?subject=Hi%20there" class="footer-link">Email us</a></div></div></div><div class="divider_container"><div class="footer_line-divider"></div></div><div class="w-layout-grid footer_bottom-wrap"><div class="footer_settings_wrap"><a href="/terms-and-conditions" class="rl_footer4_legal-link">Terms and Conditions</a><a href="/privacy-policy" class="rl_footer4_legal-link">Privacy Policy</a><a href="/privacy-policy" class="rl_footer4_legal-link">Cookies Settings</a></div><div class="footer_credit-text">© 2025 PMFtracker. All rights reserved.</div></div></div></div></div>
+
+<script src="/js/jquery.js" type="text/javascript"></script>
+<script src="/js/webflow.schunk.36b8fb49256177c8.js" type="text/javascript"></script>
+<script src="/js/webflow.schunk.9d5021b1f222040f.js" type="text/javascript"></script>
+<script src="/js/webflow-script.js" type="text/javascript"></script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KS6486GZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+</body>
+</html>
