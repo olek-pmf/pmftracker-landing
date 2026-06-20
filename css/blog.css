@@ -473,3 +473,8 @@
 .mkt-cta .mkt-cta-sub a { color: #fff; text-decoration: underline; }
 @media (max-width: 991px) { .mkt-grid, .mkt-grid.is-3 { grid-template-columns: 1fr 1fr; } .mkt-stats { grid-template-columns: 1fr; max-width: 420px; } }
 @media (max-width: 640px) { .mkt-grid, .mkt-grid.is-3, .mkt-grid.is-2 { grid-template-columns: 1fr; } .mkt-sec { padding: 3rem 0; } .mkt-cta { padding: 2.6rem 1.4rem; } }
+
+/* Homepage CTA components must keep their native colors, overriding the .blog-page a link reset */
+.button.is-icon { color: var(--base-color-neutral--white); }
+.button.is-icon.button-gradient div { color: var(--base-color-neutral--white); }
+.main_button_group .main-link { color: #443a59; }
