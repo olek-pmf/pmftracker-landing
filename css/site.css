@@ -25,6 +25,13 @@
 }
 .pmf-foot-col .footer-link { color: #ffffffcc; text-decoration: none; }
 .pmf-foot-col .footer-link:hover { color: #fff; }
+/* Stacked sub-section inside a column (Compare under Tools, Connect under Get in Touch) */
+.pmf-foot-h.is-sub { margin-top: 1.6rem; }
+.footer_mail_wrap { display: flex; flex-direction: column; }
+.pmf-foot-connect { display: flex; flex-direction: column; gap: .55rem; margin-top: 1.6rem; }
+.pmf-foot-connect .pmf-foot-h.is-sub { margin-top: 0; }
+.pmf-foot-connect .footer-link { color: #ffffffcc; text-decoration: none; }
+.pmf-foot-connect .footer-link:hover { color: #fff; }
 @media (max-width: 767px) {
   .footer_link-list { gap: 2rem; }
   .pmf-foot-col { min-width: 8rem; }
