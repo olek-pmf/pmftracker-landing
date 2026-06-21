@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Retention Curve vs the Sean Ellis Score | PMFtracker</title>
+<link href="https://www.pmftracker.com/blog/retention-curve-vs-pmf-survey" rel="canonical"/>
+<meta name="description" content="The retention curve is behavioral and lagging; the Sean Ellis score is attitudinal and fast. How the two PMF signals compare, and when to trust each."/>
+<meta content="Retention Curve vs the Sean Ellis Score: Which Signal to Trust" property="og:title"/>
+<meta content="One is behavioral and needs months of data; the other gives you a number today. How the retention curve and the Sean Ellis PMF score compare." property="og:description"/>
+<meta content="https://www.pmftracker.com/blog/retention-curve-vs-pmf-survey" property="og:url"/>
+<meta content="https://www.pmftracker.com/images/og-image.avif" property="og:image"/>
+<meta property="og:type" content="article"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="/css/pmftrackerr.webflow.shared.53ff0c310.css" rel="stylesheet" type="text/css"/>
+<link href="/css/blog.css" rel="stylesheet" type="text/css"/>
+<link href="/images/favicon.png" rel="shortcut icon" type="image/x-icon"/><link href="/images/app-icon.png" rel="apple-touch-icon"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Retention Curve vs the Sean Ellis Score: Which Signal to Trust","description":"The retention curve is a behavioral, lagging signal of product-market fit; the Sean Ellis score is an attitudinal, leading one. How they compare, why they agree, and when to lean on each.","author":{"@type":"Person","name":"Olek Uznanski","jobTitle":"Founder, PMFtracker","image":"https://www.pmftracker.com/images/au_profile_photo_2025-20copy-201.webp","description":"Product leader who has trained 200+ startups on product-market fit."},"publisher":{"@type":"Organization","name":"PMFtracker","logo":{"@type":"ImageObject","url":"https://www.pmftracker.com/images/links.avif"}},"mainEntityOfPage":"https://www.pmftracker.com/blog/retention-curve-vs-pmf-survey","datePublished":"2026-06-21T09:00:00+00:00","dateModified":"2026-06-21T09:00:00+00:00","image":"https://www.pmftracker.com/images/og-image.avif"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the retention curve or the Sean Ellis score a better measure of product-market fit?","acceptedAnswer":{"@type":"Answer","text":"They measure different things and are strongest together. The retention curve is the truest behavioral signal — whether people actually keep coming back — but it's lagging and needs months of cohort data to read. The Sean Ellis score is attitudinal and leading: it gives you a number today, with a clear 40% benchmark, and explains the 'why.' Use the survey for an early, fast read and the retention curve to confirm fit in behavior."}},{"@type":"Question","name":"What does a good retention curve look like?","acceptedAnswer":{"@type":"Answer","text":"A retention curve that signals product-market fit drops at first and then flattens into a stable plateau — a 'smiling' curve where a meaningful share of each cohort keeps using the product indefinitely. A curve that keeps decaying toward zero, with no flattening, means you don't have product-market fit yet, no matter how strong your top-of-funnel looks."}},{"@type":"Question","name":"Do the retention curve and the Sean Ellis score agree?","acceptedAnswer":{"@type":"Answer","text":"Usually, yes — a high Sean Ellis score tends to predict a flattening retention curve, because users who'd be 'very disappointed' to lose a product are the ones who keep coming back. When they disagree, trust retention for behavior already in the data and the survey for an early read before the curve has enough history."}}]}</script>
+<link href="/css/site.css" rel="stylesheet" type="text/css"/>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KS6486GZ');</script>
+<!-- End Google Tag Manager -->
+<!-- pmf-breadcrumb --><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.pmftracker.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.pmftracker.com/blog"},{"@type":"ListItem","position":3,"name":"Retention Curve vs the Sean Ellis Score","item":"https://www.pmftracker.com/blog/retention-curve-vs-pmf-survey"}]}</script></head>
+<body class="body blog-page">
+
+<!-- ===== NAV ===== -->
+<div data-animation="default" class="navbar_component w-nav" data-easing2="ease" data-easing="ease" data-collapse="medium" role="banner" data-duration="400"><div class="navbar_container"><a href="/" class="navbar_logo-link w-nav-brand"><img src="/images/link-20-e2-86-92-20pmf-20tracker.avif" loading="lazy" alt="Logo of PMF Tracker SaaS Firm" class="navbar-logo"/></a><nav role="navigation" class="navbar_menu is-page-height-tablet w-nav-menu"><a href="/#work" class="navbar-link w-nav-link">How it works?</a><a href="/#solution" class="navbar-link w-nav-link">Solution</a><a href="/#pricing" class="navbar-link w-nav-link">Pricing</a><a href="/for-vc" class="navbar-link w-nav-link">For VC</a><a href="/for-accelerators" class="navbar-link w-nav-link">For Accelerators</a><div class="pmf-navdrop"><a tabindex="0" class="navbar-link w-nav-link pmf-navdrop-toggle">Tools</a><div class="pmf-navdrop-menu"><a href="/pmf-score">PMF Score Calculator</a><a href="/sean-ellis-survey">Sean Ellis Survey Template</a><a href="/pmf-investor-report">Investor PMF Report</a><a href="/pmf-benchmark">PMF Benchmarks by Industry</a></div></div><a href="/blog" class="navbar-link w-nav-link">Blog</a><a href="https://app.pmftracker.com/" class="button is-icon button-gray hide-desktop w-inline-block"><div class="button-text-purple">Get started</div></a></nav><div class="navbar_button-wrap"><a href="https://app.pmftracker.com/" class="button is-icon button-gray hide-tablet w-inline-block"><div class="button-text-purple">Get started</div><div class="icon-1x1-small purple-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none"><path d="M3.86336 10H17.1967M17.1967 10L12.1967 5M17.1967 10L12.1967 15" stroke="#4D455E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></a><div class="navbar_menu-button w-nav-button"><div class="rl_menu-icon2"><div class="rl_menu-icon2_line-top"></div><div class="rl_menu-icon2_line-middle"><div class="rl_menu-icon_line-middle-inner"></div></div><div class="rl_menu-icon2_line-bottom"></div></div></div></div></div></div>
+
+<main class="blog-shell">
+
+  <header class="article-head">
+    <a href="/blog" class="blog-back">← All articles</a>
+    <div class="article-kicker">Method Comparison</div>
+    <h1>Retention curve vs the Sean Ellis score: which signal should you trust?</h1>
+    <p class="article-dek">The retention curve and the Sean Ellis score are the two most respected ways to measure product-market fit — one behavioral, one attitudinal. They usually agree. But they tell you different things, at different speeds, and knowing which to lean on when is the difference between catching fit early and waiting months to confirm it.</p>
+    <div class="article-byline">
+      <div class="article-byline-avatar"><img src="/images/au_profile_photo_2025-20copy-201-p-500.webp" width="44" height="44" alt="Olek Uznanski" loading="lazy"/></div>
+      <div class="article-byline-text">
+        <strong>Olek Uznanski · Founder, PMFtracker</strong>
+        <span>Product leader who's trained 200+ startups on product-market fit</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="blog-wrap">
+    <div class="tldr">
+      <h2>TL;DR</h2>
+      <ul>
+        <li>The <strong>retention curve</strong> is behavioral truth — do people keep coming back — but it's <em>lagging</em> and needs months of cohort data.</li>
+        <li>The <strong>Sean Ellis score</strong> is attitudinal and <em>leading</em>: a number you can get today, with a clear 40% benchmark, plus the "why."</li>
+        <li>They correlate — a high score predicts a flattening curve, because the users who'd miss you are the ones who stick.</li>
+        <li>Best together: the survey for an early read and the reason, the retention curve to confirm it in behavior.</li>
+      </ul>
+    </div>
+  </div>
+
+  <article class="article-body">
+
+    <p>If you ask two seasoned operators how to measure product-market fit, one will say "look at your retention curve" and the other will say "run the Sean Ellis survey." They're both right. These are the two signals that actually hold up — and they're not rivals so much as a leading indicator and a lagging one. The trick is knowing which is which.</p>
+
+    <h2>The retention curve</h2>
+
+    <p>Take a cohort of users who signed up in the same period and plot the percentage still active over the weeks and months that follow. The <em>shape</em> of that line is the signal.</p>
+
+    <p>Without product-market fit, the curve decays toward zero — everyone eventually churns. With fit, it <strong>flattens</strong>: it drops at first, then levels off at a stable plateau of people who keep using the product indefinitely. Brian Balfour names a flat, "smiling" retention curve as one leg of the product-market fit trifecta, alongside meaningful usage and real growth. It's the truest signal there is, because people vote with behavior, not words — they can't fake showing up.</p>
+
+    <p>The cost of that truth is time. A retention curve only becomes readable once you have months of history <em>and</em> enough users per cohort for the line to mean something. Run it on a product that launched six weeks ago and you're reading noise.</p>
+
+    <h2>The Sean Ellis score</h2>
+
+    <p>The Sean Ellis survey asks your engaged users one question — <em>"How would you feel if you could no longer use this product?"</em> — and your score is the percentage who answer <strong>"very disappointed."</strong> The benchmark for fit is <strong>40%</strong>.</p>
+
+    <p>This is an <em>attitudinal</em> signal: it measures how people feel about losing you, not what they've already done. That sounds weaker than behavior, but it buys you something behavior can't — <strong>speed</strong>. You can get a meaningful read from a few dozen engaged users this afternoon, long before any retention curve has the history to flatten. And the follow-up questions hand you the "why" — who your fans are and what they value — which a retention chart never will. <a href="/blog/sean-ellis-40-percent-rule">Here's the 40% rule in full.</a></p>
+
+    <h2>Behavioral vs attitudinal — the core difference</h2>
+
+    <div class="pullquote">
+      The retention curve tells you what users did. The Sean Ellis score tells you how they'd feel — fast enough to act before the curve has the data to confirm it.
+    </div>
+
+    <p>That's the whole trade-off. One is a rear-view mirror that's almost impossible to fool but only shows you the road you've already driven. The other is a forward read you can take today, at the cost of being a stated feeling rather than a logged action. Neither is "better." They're answering the same question — do people need this? — from opposite ends of time.</p>
+
+    <h2>Why they usually agree</h2>
+
+    <p>Here's the reassuring part: these two signals tend to point the same way. The users who say they'd be "very disappointed" to lose you are, overwhelmingly, the same users who keep showing up. So a strong Sean Ellis score is a reliable <em>predictor</em> of a flattening retention curve — the survey sees the plateau coming before the chart can draw it.</p>
+
+    <p>When they disagree, it's usually a timing artifact: the survey has picked up a shift in sentiment that the lagging retention data hasn't caught up to yet, or a small/young cohort is making the curve look noisier than the truth. In that case, trust retention for behavior already banked, and the survey for the early read.</p>
+
+    <h2>When to lean on each</h2>
+
+    <ul>
+      <li><strong>Early stage, small numbers:</strong> lean on the Sean Ellis score. You don't have the months or the cohort size for a credible retention curve, and you need a signal you can act on now.</li>
+      <li><strong>Established, lots of data:</strong> the retention curve becomes your bedrock — it's the hardest signal to fake at scale. Keep the survey running for the "why" behind the shape.</li>
+      <li><strong>You need to move the number:</strong> use the survey. You can't really "iterate against" a retention curve week to week, but you can run the survey each cycle, read the open-ends, ship, and watch the score respond — the way Superhuman walked its score from 22% to 58%.</li>
+    </ul>
+
+    <div class="cta-box">
+      <h3>Get the leading signal today</h3>
+      <p>You don't need months of retention data to know where you stand. Run the Sean Ellis survey and get your PMF score now — free, no signup.</p>
+      <a href="/pmf-score" class="cta-btn">Calculate your PMF score →</a>
+      <span class="cta-sub">Built on the Sean Ellis 40% method.</span>
+    </div>
+
+    <h2>Use them together</h2>
+
+    <p>The strongest setup isn't picking one — it's running both, with the right job for each. Let the Sean Ellis score be your <strong>leading indicator and steering wheel</strong>: the number you check often, mine for direction, and try to push past 40%. Let the retention curve be your <strong>lagging confirmation</strong>: the slower, sturdier proof that the fit your survey predicted is showing up in real behavior. When your score climbs and, months later, your curve flattens to match, that's product-market fit you can stand behind — to your team and to your investors.</p>
+
+    <div class="cta-box">
+      <h3>Track the signal you can act on</h3>
+      <p>PMFtracker runs the Sean Ellis survey, scores how many users would be very disappointed to lose you, surfaces your ICP from the open-ends, and tracks the trend — the leading indicator that moves before your retention curve does.</p>
+      <a href="https://app.pmftracker.com/" class="cta-btn">Start measuring free →</a>
+      <span class="cta-sub">Set up in 5 minutes · No credit card required</span>
+    </div>
+
+  </article>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq-section">
+    <h2>Frequently asked questions</h2>
+    <div class="faq-item">
+      <h3>Is the retention curve or the Sean Ellis score a better measure of PMF?</h3>
+      <p>They measure different things and are strongest together. The retention curve is the truest behavioral signal — whether people actually keep coming back — but it's lagging and needs months of cohort data. The Sean Ellis score is attitudinal and leading: a number you can get today, with a clear 40% benchmark, plus the "why." Use the survey for an early read and the retention curve to confirm fit in behavior.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What does a good retention curve look like?</h3>
+      <p>One that drops at first and then flattens into a stable plateau — a "smiling" curve where a meaningful share of each cohort keeps using the product indefinitely. A curve that keeps decaying toward zero, with no flattening, means you don't have product-market fit yet, no matter how strong your top-of-funnel looks.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Do the retention curve and the Sean Ellis score agree?</h3>
+      <p>Usually, yes — a high Sean Ellis score tends to predict a flattening retention curve, because users who'd be "very disappointed" to lose a product are the ones who keep coming back. When they disagree, trust retention for behavior already in the data, and the survey for an early read before the curve has enough history.</p>
+    </div>
+  </section>
+
+  <!-- ===== RELATED ===== -->
+  <nav class="related">
+    <h2>Keep reading</h2>
+    <ul class="related-list">
+      <li><a href="/blog/how-to-know-if-you-have-product-market-fit">How to know if you have product-market fit: 6 signals →</a></li>
+      <li><a href="/blog/nps-vs-product-market-fit">NPS vs the PMF survey: which measures fit? →</a></li>
+      <li><a href="/blog/how-to-measure-product-market-fit">The complete guide to measuring product-market fit →</a></li>
+      <li><a href="/blog/what-is-a-good-pmf-score">What's a good PMF score? The 40% benchmark →</a></li>
+      <li><a href="/pmf-score">Try the free PMF score calculator →</a></li>
+    </ul>
+  </nav>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer_component overflow-hidden"><div class="padding-global is-footer"><div class="container-large"><div class="w-layout-grid footer_top-wrapper"><a href="/" class="footer_logo-link w-nav-brand"><img src="/images/links.avif" loading="lazy" alt="PMF Brand Mark - Go back to the home page" class="footer_logo"/></a><div class="w-layout-grid footer_link-list"><div class="footer_mail_wrap"><div class="footer_header_wrap"><p class="heading-style-h6">Get in Touch</p><p class="footer-text">We&#x27;re here to help. You can reach us <br/>via email or our social media.</p></div><div class="footer_mail"><img src="/images/ic_sharp-mail.webp" loading="lazy" alt="" class="mail"/><a href="mailto:hello@pmftracker.com?subject=Hi%20there" class="footer-mail-text">hello@pmftracker.com</a></div><div class="pmf-foot-connect"><p class="pmf-foot-h is-sub">Connect</p><a href="https://www.linkedin.com/company/pmftracker" target="_blank" class="footer-link">LinkedIn</a><a href="mailto:hello@pmftracker.com?subject=Hi%20there" class="footer-link">Email us</a></div></div><div class="pmf-foot-col"><p class="pmf-foot-h">Product</p><a href="/#work" class="footer-link">How it works?</a><a href="/#solution" class="footer-link">Solution</a><a href="/#pricing" class="footer-link">Pricing</a><a href="/for-vc" class="footer-link">For VCs</a><a href="/for-accelerators" class="footer-link">For Accelerators</a><a href="/#faq" class="footer-link">FAQ</a><a href="https://app.pmftracker.com/" class="footer-link">Start Free</a><a href="https://cal.com/pmftracker/product-demo" class="footer-link">Book Demo</a></div><div class="pmf-foot-col"><p class="pmf-foot-h">Tools</p><a href="/pmf-score" class="footer-link">PMF Score Calculator</a><a href="/sean-ellis-survey" class="footer-link">Sean Ellis Survey Template</a><a href="/pmf-investor-report" class="footer-link">Investor PMF Report</a><a href="/pmf-benchmark" class="footer-link">PMF Benchmarks by Industry</a><p class="pmf-foot-h is-sub">Compare</p><a href="/vs/pmfsurvey" class="footer-link">vs PMFsurvey.com</a><a href="/vs/typeform-spreadsheet" class="footer-link">vs Typeform + Sheets</a><a href="/vs/survicate" class="footer-link">vs Survicate</a><a href="/vs/tally" class="footer-link">vs Tally</a><a href="/vs/surveymonkey" class="footer-link">vs SurveyMonkey</a></div><div class="pmf-foot-col"><p class="pmf-foot-h">Articles</p><a href="/blog" class="footer-link">All articles</a><a href="/blog/sean-ellis-40-percent-rule" class="footer-link">The Sean Ellis 40% Rule</a><a href="/blog/superhuman-pmf-engine" class="footer-link">Superhuman: 22% &#8594; 58%</a><a href="/blog/how-to-measure-product-market-fit" class="footer-link">How to Measure PMF</a><a href="/blog/how-to-improve-pmf-score" class="footer-link">Improve Your PMF Score</a></div></div></div><div class="divider_container"><div class="footer_line-divider"></div></div><div class="w-layout-grid footer_bottom-wrap"><div class="footer_settings_wrap"><a href="/terms-and-conditions" class="rl_footer4_legal-link">Terms and Conditions</a><a href="/privacy-policy" class="rl_footer4_legal-link">Privacy Policy</a><a href="/privacy-policy" class="rl_footer4_legal-link">Cookies Settings</a></div><div class="footer_credit-text">© 2025 PMFtracker. All rights reserved.</div></div></div></div></div>
+
+<script src="/js/jquery.js" type="text/javascript"></script>
+<script src="/js/webflow.schunk.36b8fb49256177c8.js" type="text/javascript"></script>
+<script src="/js/webflow.schunk.9d5021b1f222040f.js" type="text/javascript"></script>
+<script src="/js/webflow-script.js" type="text/javascript"></script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KS6486GZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+</body>
+</html>
