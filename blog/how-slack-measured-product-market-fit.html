@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>How Slack Measured Product-Market Fit: The 51% Survey | PMFtracker</title>
+<link href="https://www.pmftracker.com/blog/how-slack-measured-product-market-fit" rel="canonical"/>
+<meta name="description" content="An independent survey of 731 Slack users found 51% would be &quot;very disappointed&quot; without it. How Slack's product-market fit was measured — and what it teaches you."/>
+<meta content="How Slack Measured Product-Market Fit: The 51% Survey" property="og:title"/>
+<meta content="731 Slack users, one Sean Ellis question, a 51% score. How Slack's product-market fit was measured — and how to run the same survey on your users." property="og:description"/>
+<meta content="https://www.pmftracker.com/blog/how-slack-measured-product-market-fit" property="og:url"/>
+<meta content="https://www.pmftracker.com/images/og-image.avif" property="og:image"/>
+<meta property="og:type" content="article"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="/css/pmftrackerr.webflow.shared.53ff0c310.css" rel="stylesheet" type="text/css"/>
+<link href="/css/blog.css" rel="stylesheet" type="text/css"/>
+<link href="/images/link-20-e2-86-92-20pmf-20tracker.avif" rel="icon"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How Slack Measured Product-Market Fit: The 51% Survey","description":"An independent research project surveyed 731 Slack users with the Sean Ellis question and found 51% would be 'very disappointed' without it. What the score and the open-ended answers revealed — and how to run the same survey.","author":{"@type":"Person","name":"Olek Uznanski","jobTitle":"Founder, PMFtracker","image":"https://www.pmftracker.com/images/au_profile_photo_2025-20copy-201.webp","description":"Product leader who has trained 200+ startups on product-market fit."},"publisher":{"@type":"Organization","name":"PMFtracker","logo":{"@type":"ImageObject","url":"https://www.pmftracker.com/images/links.avif"}},"mainEntityOfPage":"https://www.pmftracker.com/blog/how-slack-measured-product-market-fit","datePublished":"2026-06-21T09:00:00+00:00","dateModified":"2026-06-21T09:00:00+00:00","image":"https://www.pmftracker.com/images/og-image.avif"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What was Slack's product-market fit score?","acceptedAnswer":{"@type":"Answer","text":"In an independent research project led by Hiten Shah, 731 Slack users were surveyed with the Sean Ellis question — \"How would you feel if you could no longer use Slack?\" 51% said they'd be \"very disappointed,\" comfortably above the 40% threshold that signals product-market fit."}},{"@type":"Question","name":"How did Slack measure product-market fit?","acceptedAnswer":{"@type":"Answer","text":"The most-cited measurement came from an external Sean Ellis survey of 731 users, which returned a 51% \"very disappointed\" score. The open-ended answers showed users valued Slack for productivity and collaboration, and that the most-wanted missing feature at the time was video conferencing. Slack itself reached fit earlier by building the tool internally and using it every day before launch."}},{"@type":"Question","name":"Why is 51% a good score?","acceptedAnswer":{"@type":"Answer","text":"Because the benchmark for product-market fit is 40%. Sean Ellis found that products where at least 40% of users would be \"very disappointed\" to lose them tend to grow; below that, they tend to stall. Slack's 51% sits clearly above the line."}},{"@type":"Question","name":"Can I run the same survey Slack did?","acceptedAnswer":{"@type":"Answer","text":"Yes — it's the standard Sean Ellis survey and works for any product. Ask your engaged users how they'd feel if they could no longer use it, calculate the percentage who say \"very disappointed,\" and aim for 40% or more. You don't need Slack's scale; even a few dozen engaged responses give you a directional read."}}]}</script>
+<link href="/css/site.css" rel="stylesheet" type="text/css"/>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KS6486GZ');</script>
+<!-- End Google Tag Manager -->
+<!-- pmf-breadcrumb --><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.pmftracker.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.pmftracker.com/blog"},{"@type":"ListItem","position":3,"name":"How Slack Measured Product-Market Fit","item":"https://www.pmftracker.com/blog/how-slack-measured-product-market-fit"}]}</script></head>
+<body class="body blog-page">
+
+<!-- ===== NAV ===== -->
+<div data-animation="default" class="navbar_component w-nav" data-easing2="ease" data-easing="ease" data-collapse="medium" role="banner" data-duration="400"><div class="navbar_container"><a href="/" class="navbar_logo-link w-nav-brand"><img src="/images/link-20-e2-86-92-20pmf-20tracker.avif" loading="lazy" alt="Logo of PMF Tracker SaaS Firm" class="navbar-logo"/></a><nav role="navigation" class="navbar_menu is-page-height-tablet w-nav-menu"><a href="/#work" class="navbar-link w-nav-link">How it works?</a><a href="/#solution" class="navbar-link w-nav-link">Solution</a><a href="/#pricing" class="navbar-link w-nav-link">Pricing</a><a href="/for-vc" class="navbar-link w-nav-link">For VC</a><a href="/for-accelerators" class="navbar-link w-nav-link">For Accelerators</a><div class="pmf-navdrop"><a tabindex="0" class="navbar-link w-nav-link pmf-navdrop-toggle">Tools</a><div class="pmf-navdrop-menu"><a href="/pmf-score">PMF Score Calculator</a><a href="/sean-ellis-survey">Sean Ellis Survey Template</a><a href="/pmf-investor-report">Investor PMF Report</a></div></div><a href="/blog" class="navbar-link w-nav-link">Blog</a><a href="https://app.pmftracker.com/" class="button is-icon button-gray hide-desktop w-inline-block"><div class="button-text-purple">Get started</div></a></nav><div class="navbar_button-wrap"><a href="https://app.pmftracker.com/" class="button is-icon button-gray hide-tablet w-inline-block"><div class="button-text-purple">Get started</div><div class="icon-1x1-small purple-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none"><path d="M3.86336 10H17.1967M17.1967 10L12.1967 5M17.1967 10L12.1967 15" stroke="#4D455E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></a><div class="navbar_menu-button w-nav-button"><div class="rl_menu-icon2"><div class="rl_menu-icon2_line-top"></div><div class="rl_menu-icon2_line-middle"><div class="rl_menu-icon_line-middle-inner"></div></div><div class="rl_menu-icon2_line-bottom"></div></div></div></div></div></div>
+
+<main class="blog-shell">
+
+  <header class="article-head">
+    <a href="/blog" class="blog-back">← All articles</a>
+    <div class="article-kicker">Case Study</div>
+    <h1>How Slack measured product-market fit: the 51% survey</h1>
+    <p class="article-dek">Slack looked like an overnight success. But somebody actually put a number on its product-market fit — and it wasn't Slack's own growth team. An independent study surveyed 731 users with a single question, and 51% gave the answer that defines fit. Here's what they found, why the open-ended answers mattered as much as the score, and how to run the exact same survey on your own users.</p>
+    <div class="article-byline">
+      <div class="article-byline-avatar"><img src="/images/au_profile_photo_2025-20copy-201-p-500.webp" width="44" height="44" alt="Olek Uznanski" loading="lazy"/></div>
+      <div class="article-byline-text">
+        <strong>Olek Uznanski · Founder, PMFtracker</strong>
+        <span>Product leader who's trained 200+ startups on product-market fit</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="blog-wrap">
+    <div class="tldr">
+      <h2>TL;DR</h2>
+      <ul>
+        <li>An independent research project by Hiten Shah surveyed <strong>731 Slack users</strong> with the Sean Ellis question. <strong>51%</strong> said they'd be "very disappointed" without Slack — past the 40% fit line.</li>
+        <li>The open-ended answers were as useful as the score: users valued <strong>productivity and collaboration</strong>, and nearly everyone wanted the same missing feature — <strong>video conferencing</strong>.</li>
+        <li>Slack didn't stumble into fit. It came out of a failed game, built as an internal tool the team used daily before anyone else did.</li>
+        <li>You can run the exact same survey on your users — you don't need Slack's scale to get the signal.</li>
+      </ul>
+    </div>
+  </div>
+
+  <article class="article-body">
+
+    <p>Slack is the company everyone points to when they say "product-market fit." It went from launch to one of the fastest-growing business apps ever, and the story gets told like it was inevitable.</p>
+
+    <p>It wasn't. And more to the point: the fit was <em>measured</em>, with a number, using the same survey you can run this week.</p>
+
+    <h2>The 51% study</h2>
+
+    <p>The most-cited measurement of Slack's product-market fit didn't come from inside the company. It came from <strong>Hiten Shah</strong>, co-founder of KISSmetrics, who ran an open research project surveying <strong>731 Slack users</strong> with the Sean Ellis question:</p>
+
+    <div class="callout">
+      <p class="formula">"How would you feel if you could no longer use Slack?"</p>
+    </div>
+
+    <p>The headline result: <strong>51% said they'd be "very disappointed."</strong></p>
+
+    <p>That number matters because of the line it clears. Sean Ellis established 40% as the threshold that separates products with real fit from products people merely like. At 51%, Slack wasn't borderline — it was solidly, measurably on the right side of it. Just over half of its users would feel a genuine loss without it. That's the engine behind the word-of-mouth growth everyone remembers.</p>
+
+    <div class="pullquote">
+      51% of Slack users would be "very disappointed" to lose it. That single percentage is what product-market fit looks like as a number.
+    </div>
+
+    <h2>The answers behind the number</h2>
+
+    <p>Here's the part most people skip when they quote the 51%: the score was only half the value. The open-ended answers told the rest of the story — and this is where the survey earns its keep.</p>
+
+    <p>Asked why they'd miss it, the "very disappointed" users kept returning to two things: Slack made them <strong>more productive</strong>, and it <strong>improved how their team collaborated</strong>. That's not a feature list. It's the core value proposition, written by the customers themselves — exactly the language you'd want on a landing page.</p>
+
+    <p>And the survey surfaced the roadmap, too. Across the board, users named the same missing must-have at the time: <strong>video conferencing</strong>. One question, and Slack's research had both confirmation of fit and a clear signal about what to build next.</p>
+
+    <p>That's the pattern worth copying. The score tells you <em>whether</em> you have fit. The open-ends tell you <em>why</em> — and what to do about it.</p>
+
+    <h2>Where Slack's fit actually came from</h2>
+
+    <p>The survey measured the fit. It didn't create it. So where did a 51% product come from?</p>
+
+    <p>Famously, from a failure. Slack grew out of Tiny Speck, a company building an online game called Glitch. The game didn't work out. But the team had built an internal messaging tool to coordinate their own work — and that tool was the thing they couldn't live without. They'd been their own "very disappointed" users for years before anyone outside the company touched it.</p>
+
+    <p>So by the time Slack launched, it had already passed the hardest test: a small group of people used it every single day and would have been lost without it. The Sean Ellis survey just put a number on something the team had already lived. That's the healthiest order of operations — build something a few people love, then measure how deep that love runs before you pour fuel on growth.</p>
+
+    <div class="cta-box">
+      <h3>Get your own number</h3>
+      <p>Slack's 51% came from one simple question. Run the same Sean Ellis survey on your users and see where you land against the 40% line — free, no signup.</p>
+      <a href="/pmf-score" class="cta-btn">Calculate your PMF score →</a>
+      <span class="cta-sub">Built on the Sean Ellis 40% method.</span>
+    </div>
+
+    <h2>What this means for your startup</h2>
+
+    <p>It's tempting to read a Slack case study and file it under "great, but I'm not Slack." That's the wrong takeaway. The useful one is the opposite: the thing that measured Slack's fit is available to you, costs nothing, and works at any size.</p>
+
+    <p>You don't need 731 responses. A few dozen engaged users will give you a directional read. You don't need a famous researcher — the question is three options long. And you don't need fit to already exist; the score is just as valuable when it comes back at 18% and tells you the truth.</p>
+
+    <p>Three things to copy from how Slack's fit got measured:</p>
+
+    <ul>
+      <li><strong>Survey engaged users, not everyone.</strong> The 731 were real Slack users, not random signups. Ask people who've actually experienced the product. <a href="/blog/how-to-run-a-pmf-survey">Here's exactly who to survey and when.</a></li>
+      <li><strong>Read the open-ends like a roadmap.</strong> "Productivity" and "collaboration" were Slack's positioning. "Video conferencing" was its backlog. Yours are hiding in your responses right now.</li>
+      <li><strong>Treat the score as a baseline, not a verdict.</strong> Slack's 51% was a point in time. The value comes from tracking it as you ship — which is what Superhuman did to climb from 22% to 58%.</li>
+    </ul>
+
+    <p>Slack's product-market fit wasn't magic, and it wasn't a guess. It was one question, 731 answers, and a number that crossed 40%. The same playbook is sitting in front of you.</p>
+
+    <div class="cta-box">
+      <h3>Measure it like Slack, track it like Superhuman</h3>
+      <p>PMFtracker runs the Sean Ellis survey, scores how many users would be very disappointed to lose you, turns the open-ended answers into your ICP and roadmap, and tracks the trend over time.</p>
+      <a href="https://app.pmftracker.com/" class="cta-btn">Start measuring free →</a>
+      <span class="cta-sub">Set up in 5 minutes · No credit card required</span>
+    </div>
+
+  </article>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq-section">
+    <h2>Frequently asked questions</h2>
+    <div class="faq-item">
+      <h3>What was Slack's product-market fit score?</h3>
+      <p>In an independent research project led by Hiten Shah, 731 Slack users were surveyed with the Sean Ellis question — "How would you feel if you could no longer use Slack?" 51% said they'd be "very disappointed," comfortably above the 40% threshold that signals product-market fit.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How did Slack measure product-market fit?</h3>
+      <p>The most-cited measurement came from an external Sean Ellis survey of 731 users, which returned a 51% "very disappointed" score. The open-ended answers showed users valued Slack for productivity and collaboration, and that the most-wanted missing feature at the time was video conferencing. Slack itself reached fit earlier by building the tool internally and using it every day before launch.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Why is 51% a good score?</h3>
+      <p>Because the benchmark for product-market fit is 40%. Sean Ellis found that products where at least 40% of users would be "very disappointed" to lose them tend to grow; below that, they tend to stall. Slack's 51% sits clearly above the line.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can I run the same survey Slack did?</h3>
+      <p>Yes — it's the standard Sean Ellis survey and works for any product. Ask your engaged users how they'd feel if they could no longer use it, calculate the percentage who say "very disappointed," and aim for 40% or more. You don't need Slack's scale; even a few dozen engaged responses give you a directional read.</p>
+    </div>
+  </section>
+
+  <!-- ===== RELATED ===== -->
+  <nav class="related">
+    <h2>Keep reading</h2>
+    <ul class="related-list">
+      <li><a href="/blog/product-market-fit-examples">Product-market fit examples: how 8 startups found it →</a></li>
+      <li><a href="/blog/superhuman-pmf-engine">How Superhuman went from 22% to 58% PMF score →</a></li>
+      <li><a href="/blog/sean-ellis-40-percent-rule">The Sean Ellis 40% rule, explained →</a></li>
+      <li><a href="/blog/how-to-run-a-pmf-survey">How to run a PMF survey (with the exact questions) →</a></li>
+      <li><a href="/pmf-score">Try the free PMF score calculator →</a></li>
+    </ul>
+  </nav>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer_component overflow-hidden"><div class="padding-global is-footer"><div class="container-large"><div class="w-layout-grid footer_top-wrapper"><a href="/" class="footer_logo-link w-nav-brand"><img src="/images/links.avif" loading="lazy" alt="PMF Brand Mark - Go back to the home page" class="footer_logo"/></a><div class="w-layout-grid footer_link-list"><div class="footer_mail_wrap"><div class="footer_header_wrap"><p class="heading-style-h6">Get in Touch</p><p class="footer-text">We&#x27;re here to help. You can reach us <br/>via email or our social media.</p></div><div class="footer_mail"><img src="/images/ic_sharp-mail.webp" loading="lazy" alt="" class="mail"/><a href="mailto:hello@pmftracker.com?subject=Hi%20there" class="footer-mail-text">hello@pmftracker.com</a></div><div class="pmf-foot-connect"><p class="pmf-foot-h is-sub">Connect</p><a href="https://www.linkedin.com/company/pmftracker" target="_blank" class="footer-link">LinkedIn</a><a href="mailto:hello@pmftracker.com?subject=Hi%20there" class="footer-link">Email us</a></div></div><div class="pmf-foot-col"><p class="pmf-foot-h">Product</p><a href="/#work" class="footer-link">How it works?</a><a href="/#solution" class="footer-link">Solution</a><a href="/#pricing" class="footer-link">Pricing</a><a href="/for-vc" class="footer-link">For VCs</a><a href="/for-accelerators" class="footer-link">For Accelerators</a><a href="/#faq" class="footer-link">FAQ</a><a href="https://app.pmftracker.com/" class="footer-link">Start Free</a><a href="https://cal.com/pmftracker/product-demo" class="footer-link">Book Demo</a></div><div class="pmf-foot-col"><p class="pmf-foot-h">Tools</p><a href="/pmf-score" class="footer-link">PMF Score Calculator</a><a href="/sean-ellis-survey" class="footer-link">Sean Ellis Survey Template</a><a href="/pmf-investor-report" class="footer-link">Investor PMF Report</a><p class="pmf-foot-h is-sub">Compare</p><a href="/vs/pmfsurvey" class="footer-link">vs PMFsurvey.com</a><a href="/vs/typeform-spreadsheet" class="footer-link">vs Typeform + Sheets</a><a href="/vs/survicate" class="footer-link">vs Survicate</a><a href="/vs/tally" class="footer-link">vs Tally</a><a href="/vs/surveymonkey" class="footer-link">vs SurveyMonkey</a></div><div class="pmf-foot-col"><p class="pmf-foot-h">Articles</p><a href="/blog" class="footer-link">All articles</a><a href="/blog/sean-ellis-40-percent-rule" class="footer-link">The Sean Ellis 40% Rule</a><a href="/blog/superhuman-pmf-engine" class="footer-link">Superhuman: 22% &#8594; 58%</a><a href="/blog/how-to-measure-product-market-fit" class="footer-link">How to Measure PMF</a><a href="/blog/how-to-improve-pmf-score" class="footer-link">Improve Your PMF Score</a></div></div></div><div class="divider_container"><div class="footer_line-divider"></div></div><div class="w-layout-grid footer_bottom-wrap"><div class="footer_settings_wrap"><a href="/terms-and-conditions" class="rl_footer4_legal-link">Terms and Conditions</a><a href="/privacy-policy" class="rl_footer4_legal-link">Privacy Policy</a><a href="/privacy-policy" class="rl_footer4_legal-link">Cookies Settings</a></div><div class="footer_credit-text">© 2025 PMFtracker. All rights reserved.</div></div></div></div></div>
+
+<script src="/js/jquery.js" type="text/javascript"></script>
+<script src="/js/webflow.schunk.36b8fb49256177c8.js" type="text/javascript"></script>
+<script src="/js/webflow.schunk.9d5021b1f222040f.js" type="text/javascript"></script>
+<script src="/js/webflow-script.js" type="text/javascript"></script>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KS6486GZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+</body>
+</html>
