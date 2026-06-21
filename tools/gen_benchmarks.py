@@ -111,7 +111,7 @@ def render_article(slug, title, desc, og_desc, kicker, h1, dek, tldr_items, body
 <meta content="summary_large_image" name="twitter:card"/>
 <link href="/css/pmftrackerr.webflow.shared.53ff0c310.css" rel="stylesheet" type="text/css"/>
 <link href="/css/blog.css" rel="stylesheet" type="text/css"/>
-<link href="/images/link-20-e2-86-92-20pmf-20tracker.avif" rel="icon"/>
+<link href="/images/favicon.png" rel="shortcut icon" type="image/x-icon"/><link href="/images/app-icon.png" rel="apple-touch-icon"/>
 {jld(article)}
 {jld(faqpage)}
 <link href="/css/site.css" rel="stylesheet" type="text/css"/>
@@ -478,8 +478,12 @@ INDUSTRIES.append(dict(
 os.makedirs(os.path.join(ROOT,"pmf-benchmark"), exist_ok=True)
 written=[]
 for d in INDUSTRIES:
+    # Cross-link sibling benchmarks (so each page has more than one incoming internal link).
+    siblings = [(f"/pmf-benchmark/{x['slug']}", f"PMF benchmark for {x['name']}")
+                for x in INDUSTRIES if x["slug"] != d["slug"]][:3]
+    related = d["related"][:2] + siblings + [("/pmf-benchmark", "All PMF benchmarks by industry")]
     html = render_article(d["slug"], d["title"], d["desc"], d["og"], d["kicker"], d["h1"], d["dek"],
-                          d["tldr"], d["body"], d["faq"], d["related"], d["name"].title())
+                          d["tldr"], d["body"], d["faq"], related, d["name"].title())
     path=os.path.join(ROOT,"pmf-benchmark",d["slug"]+".html")
     open(path,"w",encoding="utf-8").write(html)
     written.append(path)
@@ -525,7 +529,7 @@ hub=f'''<!DOCTYPE html>
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>PMF Benchmarks by Industry: What's a Good Score? | PMFtracker</title>
+<title>PMF Benchmarks by Industry | PMFtracker</title>
 <link href="{B}/pmf-benchmark" rel="canonical"/>
 <meta name="description" content="What's a good PMF score in your industry? The benchmark is 40% everywhere — but how you measure it changes. Guides for SaaS, fintech, marketplaces, AI and more."/>
 <meta content="PMF Benchmarks by Industry: What's a Good Score?" property="og:title"/>
@@ -536,7 +540,7 @@ hub=f'''<!DOCTYPE html>
 <meta content="summary_large_image" name="twitter:card"/>
 <link href="/css/pmftrackerr.webflow.shared.53ff0c310.css" rel="stylesheet" type="text/css"/>
 <link href="/css/blog.css" rel="stylesheet" type="text/css"/>
-<link href="/images/link-20-e2-86-92-20pmf-20tracker.avif" rel="icon"/>
+<link href="/images/favicon.png" rel="shortcut icon" type="image/x-icon"/><link href="/images/app-icon.png" rel="apple-touch-icon"/>
 {jld(hub_items)}
 <link href="/css/site.css" rel="stylesheet" type="text/css"/>
 
