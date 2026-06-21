@@ -103,3 +103,44 @@
   }
   .pmf-navdrop-menu a { color: inherit; }
 }
+
+/* ============================================================================
+   Lead capture — modal, value-exchange CTA, "request your industry" card
+   ========================================================================== */
+.lead-modal { position: fixed; inset: 0; z-index: 2000; display: none; align-items: center; justify-content: center; padding: 1.25rem; }
+.lead-modal.is-open { display: flex; }
+.lead-modal-overlay { position: absolute; inset: 0; background: rgba(10, 8, 38, .55); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+.lead-modal-card {
+  position: relative; z-index: 1; width: 100%; max-width: 440px;
+  background: #fff; border-radius: 18px; padding: 2.2rem 2rem 1.8rem;
+  box-shadow: 0 40px 90px -30px rgba(15, 23, 42, .55);
+  animation: leadPop .22s cubic-bezier(.2, .8, .25, 1);
+}
+@keyframes leadPop { from { opacity: 0; transform: translateY(14px) scale(.98); } to { opacity: 1; transform: none; } }
+.lead-modal-x { position: absolute; top: .75rem; right: .9rem; background: none; border: none; font-size: 1.6rem; line-height: 1; color: #94a3b8; cursor: pointer; padding: .2rem; }
+.lead-modal-x:hover { color: #475569; }
+.lead-title { font-size: 1.45rem; line-height: 1.2; color: var(--blog-ink, #0f172a); margin: 0 0 .5rem; letter-spacing: -.01em; }
+.lead-sub { font-size: 1rem; line-height: 1.55; color: var(--blog-muted, #64748b); margin: 0 0 1.25rem; }
+.lead-form input { width: 100%; box-sizing: border-box; font: inherit; font-size: 1rem; padding: .8rem .9rem; margin: 0 0 .7rem; border: 1px solid #d8dee9; border-radius: 10px; color: #0f172a; background: #fff; }
+.lead-form input:focus { outline: none; border-color: #6366f1; box-shadow: 0 0 0 3px rgba(99, 102, 241, .15); }
+.lead-error { color: #dc2626; font-size: .85rem; margin: -.3rem 0 .6rem; }
+.lead-submit { width: 100%; border: none; cursor: pointer; font: inherit; font-weight: 600; }
+.lead-submit[disabled] { opacity: .65; cursor: default; }
+.lead-fine { font-size: .78rem; color: #94a3b8; text-align: center; margin: .8rem 0 0; }
+.lead-success { text-align: center; padding: .5rem 0 .3rem; }
+.lead-check { width: 54px; height: 54px; margin: 0 auto 1rem; border-radius: 50%; background: linear-gradient(135deg, #6366f1, #4f46e5); color: #fff; font-size: 1.6rem; display: flex; align-items: center; justify-content: center; }
+.lead-success-title { font-size: 1.35rem; color: var(--blog-ink, #0f172a); margin: 0 0 .5rem; }
+.lead-success-msg { font-size: 1rem; line-height: 1.55; color: var(--blog-muted, #64748b); margin: 0 0 1.25rem; }
+.lead-success-close { border: none; cursor: pointer; font: inherit; font-weight: 600; }
+
+/* value-exchange CTA (reuses .cta-box look; button instead of link) */
+.cta-box button.cta-btn { border: none; cursor: pointer; font: inherit; font-weight: 600; }
+.lead-cta { border: 1px solid rgba(99, 102, 241, .25); }
+
+/* "request your industry" card in the benchmark hub grid */
+.lead-request-card { border: 1.5px dashed #c7d2fe; background: linear-gradient(180deg, #f8f9ff, #fff); display: flex; flex-direction: column; }
+.lead-request-card .blog-card-tag { color: #6366f1; }
+.lead-request-btn { margin-top: auto; align-self: flex-start; background: linear-gradient(135deg, #6366f1, #4f46e5); color: #fff; border: none; cursor: pointer; font: inherit; font-weight: 600; font-size: .98rem; padding: .65rem 1.1rem; border-radius: 10px; }
+.lead-request-btn:hover { filter: brightness(1.05); }
+/* honeypot — off-screen, not display:none (so bots still "see" and fill it) */
+.lead-hp { position: absolute !important; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }

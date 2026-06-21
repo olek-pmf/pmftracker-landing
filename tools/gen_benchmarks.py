@@ -46,6 +46,7 @@ GTM_BODY = '''<script src="/js/jquery.js" type="text/javascript"></script>
 <script src="/js/webflow.schunk.36b8fb49256177c8.js" type="text/javascript"></script>
 <script src="/js/webflow.schunk.9d5021b1f222040f.js" type="text/javascript"></script>
 <script src="/js/webflow-script.js" type="text/javascript"></script>
+<script src="/js/lead.js" defer></script>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KS6486GZ"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -145,6 +146,16 @@ def render_article(slug, title, desc, og_desc, kicker, h1, dek, tldr_items, body
 {body_html}
 
   </article>
+
+  <!-- ===== LEAD MAGNET ===== -->
+  <div class="lp-calc-wrap">
+    <div class="cta-box lead-cta">
+      <h3>Get the PMF Benchmark Kit</h3>
+      <p>We'll email you the full kit — the Sean Ellis survey template, scoring sheet, and the how-to-measure guide for your vertical.</p>
+      <button type="button" class="cta-btn" data-lead-open="magnet" data-lead-asset="the PMF Benchmark Kit">Email me the kit →</button>
+      <span class="cta-sub">Straight to your inbox · No spam, unsubscribe anytime.</span>
+    </div>
+  </div>
 
   <!-- ===== FAQ ===== -->
   <section class="faq-section">
@@ -490,6 +501,15 @@ for slug,name,blurb in HUBCARDS:
         <p>{blurb}</p>
         <span class="blog-card-meta">Read the benchmark →</span>
       </a>
+
+'''
+# "Don't see your industry?" request card — opens the email-capture modal (lead.js)
+cards += '''      <div class="blog-card lead-request-card">
+        <div class="blog-card-tag">Your industry</div>
+        <h2>Don't see your industry?</h2>
+        <p>Tell us which vertical you're in and we'll build the benchmark for it. Leave your email and we'll send it the moment it's ready.</p>
+        <button type="button" class="lead-request-btn" data-lead-open="request">Request your industry →</button>
+      </div>
 
 '''
 
