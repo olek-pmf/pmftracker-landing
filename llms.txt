@@ -1,0 +1,38 @@
+# PMFtracker
+
+> PMFtracker helps startups measure and prove product-market fit (PMF) using the Sean Ellis 40% survey method. Run the survey, calculate your PMF score, track it over time, find your ideal customer profile (ICP), and export investor-ready reports.
+
+PMFtracker is a SaaS product (the app lives at https://app.pmftracker.com). Pricing is one-time / lifetime — no subscription: **PMF Starter ($79)** and **PMF Startup Kit ($149)**. The core method is the Sean Ellis test: survey users with "How would you feel if you could no longer use this product?" and measure the percentage who answer "very disappointed." A score at or above 40% signals product-market fit.
+
+## Tools
+- [PMF Score Calculator](https://www.pmftracker.com/pmf-score): Free calculator — enter Sean Ellis survey responses and instantly see your PMF score against the 40% rule.
+- [Sean Ellis Survey Template](https://www.pmftracker.com/sean-ellis-survey): The complete Sean Ellis survey with exact question wording, who to survey, how many responses you need, and how to score it.
+- [Investor PMF Report](https://www.pmftracker.com/pmf-investor-report): Show product-market fit to investors with evidence — PMF trend, ICP, and benchmark — exported in minutes.
+
+## Guides and articles
+- [How to Measure Product-Market Fit](https://www.pmftracker.com/blog/how-to-measure-product-market-fit): The complete founder's guide — survey score, retention curve, NPS, and reading your numbers at every stage.
+- [The Sean Ellis 40% Rule](https://www.pmftracker.com/blog/sean-ellis-40-percent-rule): The most-validated test for PMF — the formula, who to survey, and what the 40% threshold means.
+- [How to Run a PMF Survey](https://www.pmftracker.com/blog/how-to-run-a-pmf-survey): Step by step — who to ask, when, how many responses, and the exact questions.
+- [How to Improve Your PMF Score](https://www.pmftracker.com/blog/how-to-improve-pmf-score): The iterative loop that takes a sub-40% score to a must-have product.
+- [How Superhuman Went From 22% to 58%](https://www.pmftracker.com/blog/superhuman-pmf-engine): Rahul Vohra's exact PMF engine, and how to run it without custom tooling.
+- [What Is Product-Market Fit?](https://www.pmftracker.com/blog/what-is-product-market-fit-definitions): Four definitions from the people who coined it — Rachleff, Andreessen, Ries, and Blank.
+- [What PMF Feels Like](https://www.pmftracker.com/blog/what-product-market-fit-feels-like): The three signals 25 iconic companies describe — and how to put a number on the feeling.
+- [42% of Startups Build Something Nobody Wants](https://www.pmftracker.com/blog/no-market-need-ai-discovery): Why "no market need" is still the #1 startup killer, and why AI made it worse.
+- [The Product Death Cycle](https://www.pmftracker.com/blog/product-death-cycle): Why building only the features customers ask for quietly kills products, and how to break out.
+- [Why Products Fail Despite Flawless Execution](https://www.pmftracker.com/blog/why-products-fail-product-risks): The three product risks that sink most launches, and why to kill the riskiest first.
+- [Best PMF Survey Tools (2026)](https://www.pmftracker.com/blog/best-pmf-survey-tools): The 8 best tools for running a product-market fit survey, and how to choose.
+
+## Comparisons
+- [PMFtracker vs PMFsurvey.com](https://www.pmftracker.com/vs/pmfsurvey): One-time free score vs ongoing PMF tracking, ICP, and investor reports.
+- [PMFtracker vs Typeform + Spreadsheets](https://www.pmftracker.com/vs/typeform-spreadsheet): Manual stack vs an automated collect → score → report workflow.
+- [PMFtracker vs Survicate](https://www.pmftracker.com/vs/survicate): General microsurveys vs purpose-built PMF measurement.
+- [PMFtracker vs Tally](https://www.pmftracker.com/vs/tally): A form builder that collects answers vs a tool that calculates and tracks your score.
+- [PMFtracker vs SurveyMonkey](https://www.pmftracker.com/vs/surveymonkey): A general survey suite vs a focused PMF tool for a one-time price.
+
+## For investors and accelerators
+- [PMFtracker for VCs](https://www.pmftracker.com/for-vc): Standardized PMF scores across a whole portfolio, on one scale, tracked over time. Free investor access.
+- [PMFtracker for Accelerators](https://www.pmftracker.com/for-accelerators): A standardized PMF score for every startup in a cohort, tracked to demo day. Free program access.
+
+## Start
+- [Start free](https://app.pmftracker.com/): Create an account and run your first PMF survey.
+- [Book a demo](https://cal.com/pmftracker/product-demo): Talk to the team.
