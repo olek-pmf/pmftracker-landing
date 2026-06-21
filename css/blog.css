@@ -382,6 +382,15 @@
 .lp-section h2 { font-size: clamp(1.6rem, 3.4vw, 2.1rem); line-height: 1.15; letter-spacing: -.015em; color: var(--blog-ink); margin: 0 0 1rem; }
 .lp-section > p { font-size: 1.12rem; line-height: 1.7; color: var(--blog-body); margin: 0 0 1.2rem; }
 .lp-calc-wrap { max-width: 880px; margin: 0 auto; padding: 0 1.5rem; }
+/* Money-page expansion: scenario lists + switch steps */
+.lp-list { margin: 0 0 1.2rem; padding: 0; list-style: none; }
+.lp-list li { position: relative; padding: .55rem 0 .55rem 1.7rem; font-size: 1.08rem; line-height: 1.6; color: var(--blog-body); border-top: 1px solid var(--blog-line); }
+.lp-list li:first-child { border-top: none; }
+.lp-list li::before { content: "\2192"; position: absolute; left: 0; color: var(--blog-indigo); font-weight: 700; }
+.lp-steps { margin: 0 0 1.2rem; padding: 0; list-style: none; counter-reset: lpstep; }
+.lp-steps li { position: relative; padding: .1rem 0 1rem 2.7rem; font-size: 1.08rem; line-height: 1.6; color: var(--blog-body); counter-increment: lpstep; }
+.lp-steps li:last-child { padding-bottom: 0; }
+.lp-steps li::before { content: counter(lpstep); position: absolute; left: 0; top: 0; width: 1.85rem; height: 1.85rem; border-radius: 50%; background: var(--blog-indigo); color: #fff; font-weight: 700; font-size: .95rem; display: flex; align-items: center; justify-content: center; }
 
 /* score-band cards (22 / 40 / 58) */
 .lp-bands { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
