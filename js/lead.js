@@ -151,6 +151,38 @@
     }
   }
 
+  // Auto-open (exit-intent + scroll) for pages that opt in via <body data-lead-auto="asset label">.
+  // Fires once per session, never on load, and never if the visitor already submitted.
+  function armAuto() {
+    var asset = document.body.getAttribute("data-lead-auto");
+    if (!asset) return;
+    try {
+      if (localStorage.getItem("pmf_lead_email")) return;       // already a lead
+      if (sessionStorage.getItem("pmf_lead_auto_shown")) return; // already nudged this visit
+    } catch (e) {}
+
+    var fired = false;
+    function fire() {
+      if (fired || modal.classList.contains("is-open")) return;
+      fired = true;
+      try { sessionStorage.setItem("pmf_lead_auto_shown", "1"); } catch (e) {}
+      openModal("magnet", asset, null);
+      cleanup();
+    }
+    function onMouseOut(e) { if (e.clientY <= 0 && !e.relatedTarget) fire(); } // exit-intent (desktop)
+    function onScroll() {
+      var p = (window.scrollY + window.innerHeight) / document.documentElement.scrollHeight;
+      if (p > 0.55) fire();
+    }
+    function cleanup() {
+      document.removeEventListener("mouseout", onMouseOut);
+      window.removeEventListener("scroll", onScroll);
+    }
+    document.addEventListener("mouseout", onMouseOut);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    setTimeout(fire, 40000); // fallback for touch devices where exit-intent doesn't fire
+  }
+
   function init() {
     var holder = document.createElement("div");
     holder.innerHTML = MODAL;
@@ -182,6 +214,8 @@
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal();
     });
+
+    armAuto();
   }
 
   if (document.readyState === "loading") {
