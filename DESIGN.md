@@ -243,6 +243,12 @@ components:
     number: '{typography.metric}'
     numberFill: '{gradients.accent}'   # gradient-clipped text
     labelColor: '{colors.muted}'
+  pmf-meter:
+    track: '{colors.primary-soft}'
+    fill: '{gradients.score-bar}'
+    thresholdMark: 'ink @ 40% width, 50% opacity'
+    value: '{gradients.accent}'   # gradient-clipped
+    plotGrid: 'rgba(255,255,255,0.035) 38px repeating grid on dark surfaces'
 ---
 
 # PMFtracker — Visual Identity
@@ -324,6 +330,17 @@ Gradients are core, but disciplined:
 - **Inputs.** White field, soft grey border, 10px radius, indigo focus border + soft focus ring. Calm and legible.
 - **Modals.** Centered white card (~440px), 18px radius, deep soft shadow, indigo-black blurred scrim. Spring-in entrance. Used for lead capture and quick prompts.
 - **The score gauge.** The product's signature component: a dark gradient panel housing a giant white percentage (the `metric` scale), a thin translucent track with the indigo→green fill, a 40% threshold marker, and a colored verdict line (green/amber/red). It is the visual climax of the entire system — everything else exists to lead the eye here.
+
+## The measurement motif
+
+The one thing only PMFtracker can own is *measuring a score against the 40% line*. Treat that as a recurring brand device, not a single component:
+
+- **The 40% threshold line** — a thin vertical marker at the 40% point of any progress track. It appears on the score gauge and on inline **PMF meters**, and it always reads the same way: left of the line is "not there yet," right of it is fit.
+- **PMF meters** — the gauge's DNA shrunk to an inline element: a soft-indigo track, an indigo→green fill, a gradient-clipped value, and the 40% marker. Use it to visualize real scores in prose (e.g. Slack 51%, Superhuman 58%, Baremetrics 32% — the last one stopping visibly short of the line).
+- **Stat bands** — big gradient-clipped numbers as section hooks (`40%`, `51%`, `22→58%`).
+- **Plot-grid texture** — a barely-there `rgba(255,255,255,.035)` grid laid over the dark gradient "moments," so they read as data surfaces rather than generic dark boxes.
+
+Used together and sparingly, these make the product look unmistakably like a measurement instrument — the goal that separates it from a generic SaaS template.
 
 ## Imagery & iconography
 

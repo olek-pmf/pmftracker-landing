@@ -496,3 +496,36 @@
 .stat-num { display: block; font-size: clamp(2.2rem, 7vw, 3.2rem); font-weight: 800; line-height: 1; letter-spacing: -.03em; background: linear-gradient(135deg, #6366f1, #4f46e5); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
 .stat-lab { display: block; font-size: .92rem; color: var(--blog-muted); margin-top: .55rem; line-height: 1.4; }
 @media (max-width: 640px) { .stat-band { grid-template-columns: 1fr; gap: .85rem; } }
+
+/* H1 — mobile refinements for signature surfaces */
+@media (max-width: 600px) {
+  .cta-box { padding: 1.6rem 1.3rem; }
+  .cta-box .cta-btn { display: block; width: 100%; box-sizing: border-box; }
+  .pmf-calc-result { padding: 1.4rem 1.1rem; }
+  .stat-num { font-size: 2.4rem; }
+}
+
+/* ==========================================================================
+   D1 — Measurement motif (the brand's signature visual language)
+   ========================================================================== */
+/* PMF meter — the score gauge's DNA as a repeatable inline device, with the
+   40% product-market-fit threshold line recurring on every track. */
+.pmf-meters { max-width: var(--blog-max); margin: 2rem auto; }
+.pmf-meters-legend { font-size: .85rem; color: var(--blog-muted); margin: 0 0 1.15rem; display: flex; align-items: center; gap: .55rem; }
+.pmf-meters-legend::before { content: ""; width: 2px; height: 15px; background: var(--blog-ink); opacity: .5; display: inline-block; flex: 0 0 auto; }
+.pmf-meter { margin: 0 0 1.15rem; }
+.pmf-meter:last-child { margin-bottom: 0; }
+.pmf-meter-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: .45rem; gap: 1rem; }
+.pmf-meter-label { font-weight: 700; color: var(--blog-ink); font-size: 1rem; }
+.pmf-meter-val { font-weight: 800; font-size: 1.05rem; letter-spacing: -.01em; background: linear-gradient(135deg, #6366f1, #4f46e5); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; flex: 0 0 auto; }
+.pmf-meter-track { position: relative; height: 10px; border-radius: 999px; background: var(--blog-indigo-soft); }
+.pmf-meter-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, #818cf8, #34d399); }
+.pmf-meter-mark { position: absolute; top: -4px; bottom: -4px; left: 40%; width: 2px; background: var(--blog-ink); opacity: .5; }
+
+/* Faint plot-grid on the dark "moment" surfaces — makes them read as data, not generic dark boxes */
+.pmf-calc-result, .blog-card-featured, .cta-box {
+  background-image:
+    repeating-linear-gradient(to right, rgba(255,255,255,.035) 0 1px, transparent 1px 38px),
+    repeating-linear-gradient(to bottom, rgba(255,255,255,.035) 0 1px, transparent 1px 38px),
+    linear-gradient(135deg, #0f172a 0%, #312e81 100%);
+}
