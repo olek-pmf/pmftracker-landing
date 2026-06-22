@@ -487,3 +487,12 @@
 .button.is-icon { color: var(--base-color-neutral--white); }
 .button.is-icon.button-gradient div { color: var(--base-color-neutral--white); }
 .main_button_group .main-link { color: #443a59; }
+
+/* ==========================================================================
+   Stat band — "numbers as heroes" for light article surfaces
+   ========================================================================== */
+.stat-band { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; max-width: var(--blog-max); margin: 2.25rem auto; padding: 0 1.5rem; }
+.stat { text-align: center; }
+.stat-num { display: block; font-size: clamp(2.2rem, 7vw, 3.2rem); font-weight: 800; line-height: 1; letter-spacing: -.03em; background: linear-gradient(135deg, #6366f1, #4f46e5); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+.stat-lab { display: block; font-size: .92rem; color: var(--blog-muted); margin-top: .55rem; line-height: 1.4; }
+@media (max-width: 640px) { .stat-band { grid-template-columns: 1fr; gap: .85rem; } }

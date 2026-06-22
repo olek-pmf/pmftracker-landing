@@ -147,6 +147,13 @@ def render_article(slug, title, desc, og_desc, kicker, h1, dek, tldr_items, body
 
   </article>
 
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq-section">
+    <h2>Frequently asked questions</h2>
+    {faq_html}
+  </section>
+
   <!-- ===== LEAD MAGNET ===== -->
   <div class="lp-calc-wrap">
     <div class="cta-box lead-cta">
@@ -156,12 +163,6 @@ def render_article(slug, title, desc, og_desc, kicker, h1, dek, tldr_items, body
       <span class="cta-sub">Straight to your inbox · No spam, unsubscribe anytime.</span>
     </div>
   </div>
-
-  <!-- ===== FAQ ===== -->
-  <section class="faq-section">
-    <h2>Frequently asked questions</h2>
-    {faq_html}
-  </section>
 
   <!-- ===== RELATED ===== -->
   <nav class="related">
@@ -218,7 +219,6 @@ INDUSTRIES.append(dict(
   '<div class="pullquote">Survey the person who does the work in your product, not the person who approved the invoice.</div>',
   "<h2>What \"very disappointed\" looks like in SaaS</h2>",
   "<p>When Slack hit 51%, users said it made them more productive and improved how their team collaborated. Superhuman's fans were speed-obsessed power users. The pattern in SaaS is the same: the people who'd be devastated to lose you have <strong>woven the product into a daily workflow</strong>. Read the open-ended answers and you'll usually find a job-to-be-done your most disappointed users can't imagine doing any other way. That's your ICP.</p>",
-  CTA_MID,
   "<h2>How to measure PMF in SaaS</h2>",
   "<ul>"
   "<li><strong>Filter to active users.</strong> Define \"engaged\" (e.g. used the core feature 3+ times in 14 days) and survey only them.</li>"
@@ -265,7 +265,6 @@ INDUSTRIES.append(dict(
   '<div class="pullquote">In fintech, "very disappointed" is rarely about features. It\'s about trust — and trust is the moat.</div>',
   "<h2>Nubank measured it</h2>",
   "<p>Nubank, one of the largest digital banks in the world, has talked about using the Sean Ellis \"very disappointed\" score as a key input when deciding whether to invest in new products. If a survey-based PMF score is good enough to steer product strategy at that scale, it's good enough for an early-stage fintech deciding what to build next.</p>",
-  CTA_MID,
   "<h2>How to measure PMF in fintech</h2>",
   "<ul>"
   "<li><strong>Survey funded, active accounts only.</strong> Exclude signups stuck in onboarding — they measure your funnel, not your fit.</li>"
@@ -311,7 +310,6 @@ INDUSTRIES.append(dict(
   '<div class="pullquote">A marketplace is only as healthy as its weaker side. Score them separately, and watch the one that\'s about to churn.</div>',
   "<h2>What Airbnb did</h2>",
   "<p>Airbnb's early numbers were flat because the supply side wasn't working — listings had terrible photos and weren't converting. The founders didn't run a survey to learn this; they flew to New York and fixed it by hand, shooting professional photos themselves. Bookings climbed. The lesson translates directly: when one side of your marketplace is dragging, that's where your fit problem is, and that's the side to measure and obsess over.</p>",
-  CTA_MID,
   "<h2>How to measure PMF in a marketplace</h2>",
   "<ul>"
   "<li><strong>Run the survey twice.</strong> Once for buyers who bought, once for sellers who sold. Keep the scores separate.</li>"
@@ -358,7 +356,6 @@ INDUSTRIES.append(dict(
   '<div class="pullquote">In consumer, your "very disappointed" users are your growth engine. They\'re the ones who tell everyone.</div>',
   "<h2>What Instagram did</h2>",
   "<p>Instagram started as Burbn, a cluttered app stuffed with check-ins, plans, and photos. Looking at actual usage, the founders saw one behavior carrying everything — photo sharing — and deleted the rest. The focused relaunch pulled in roughly 25,000 users on day one. The PMF lesson for consumer: don't average across a bloated product. Find the one habit your most engaged users can't live without, and measure <em>that</em>.</p>",
-  CTA_MID,
   "<h2>How to measure PMF in a consumer app</h2>",
   "<ul>"
   "<li><strong>Survey habitual users.</strong> Filter to recent daily/weekly actives. Casual installers will drag your score down and tell you nothing useful.</li>"
@@ -405,7 +402,6 @@ INDUSTRIES.append(dict(
   '<div class="pullquote">Demo-wow gets the signup. Coming back next week is product-market fit. Only measure the second one.</div>',
   "<h2>What \"very disappointed\" looks like for AI</h2>",
   "<p>For an AI product with real fit, the \"very disappointed\" answer sounds like <em>\"this does something I genuinely couldn't do before, or does it 10x faster, and I rely on it now.\"</em> If the open-ended answers are mostly \"it's cool\" or \"fun to play with,\" you have a novelty hit, not fit. The language of dependency — not delight — is what you're listening for.</p>",
-  CTA_MID,
   "<h2>How to measure PMF for an AI startup</h2>",
   "<ul>"
   "<li><strong>Survey repeat users only.</strong> Exclude first-session signups; novelty will spike their enthusiasm and lie to you.</li>"
@@ -452,7 +448,6 @@ INDUSTRIES.append(dict(
   '<div class="pullquote">A GitHub star is a compliment. A developer who\'d be "very disappointed" to lose your tool is product-market fit.</div>',
   "<h2>What \"very disappointed\" looks like for a dev tool</h2>",
   "<p>The fit signal in developer tools is unmistakable when you hear it: <em>\"I'd hate to go back to doing this manually.\"</em> The best dev tools remove a specific, recurring pain — boilerplate, debugging, deployment, glue code — and the developers who'd be devastated to lose you are the ones who remember what life was like before. The open-ended answers will name the exact chore you eliminated. That's your positioning and your roadmap.</p>",
-  CTA_MID,
   "<h2>How to measure PMF for a developer tool</h2>",
   "<ul>"
   "<li><strong>Ignore the vanity metrics.</strong> Stars, upvotes, and signups aren't fit. Survey developers who've shipped with the tool.</li>"

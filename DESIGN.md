@@ -37,7 +37,7 @@ colors:
   brand-200: '#b8bae7'
   brand-300: '#9498dc'
   brand-400: '#7175d0'
-  brand-500: '#4d53c4'
+  brand-500: '#4d53c4'   # legacy — Webflow + in-product widget indigo; converge on primary #4f46e5
   brand-600: '#3e429d'
   brand-700: '#2e3276'
   brand-800: '#1f214e'
@@ -49,7 +49,7 @@ colors:
   surface-night: '#0a0826'        # near-black base of the pill button
   hero-night: '#080331'           # deepest brand night
 
-  # Secondary accents (used sparingly)
+  # Legacy Webflow defaults — NOT part of the active system; do not use
   accent-blue: '#2d62ff'
   accent-pink: '#dd23bb'
 
@@ -239,6 +239,10 @@ components:
     barTrack: 'rgba(255, 255, 255, 0.14)'
     barFill: '{gradients.score-bar}'
     rounded: '{radii.md}'
+  stat-band:
+    number: '{typography.metric}'
+    numberFill: '{gradients.accent}'   # gradient-clipped text
+    labelColor: '{colors.muted}'
 ---
 
 # PMFtracker — Visual Identity
@@ -267,6 +271,10 @@ Indigo is the entire identity. There is effectively **one accent** (`primary` `#
 - **Tints over new hues.** When indigo needs to soften, it goes to `primary-soft` (`#eef2ff`) fills or `primary-border` (`#c7d2fe`) outlines — never a different color.
 - **Status colors are reserved for verdicts.** Green (`success`) signals "good / above the 40% benchmark," amber (`warning`) signals "close," red (`danger`) signals "below." They appear almost exclusively in result/score contexts, not as general UI chrome.
 - **The dark surfaces are a family, not one black.** `surface-dark` → `surface-dark-indigo` for panels, `surface-night`/`hero-night` for the near-black button base. The subtle differences keep the dark moments from feeling like flat black rectangles.
+
+**Accent policy — one indigo.** The active accent is a single indigo: `primary #4f46e5`, brightening to `#6366f1`. Two near-duplicates are *legacy* and should converge on it — `#4d53c4` (the Webflow brand indigo and the in-product survey-widget default; visually all but identical — set the widget's default color to `#4f46e5` so in-product and marketing match), and the unused Webflow-default blue (`#2d62ff`) and pink (`#dd23bb`), which belong to no current system. Do not introduce them.
+
+**The night ramp.** The dark surfaces are one family, not one black: `surface-dark #0f172a` → `surface-dark-indigo #312e81` for gradient panels and the gauge; `surface-night #0a0826` for the near-black pill button; `hero-night #080331` for the deepest band. Every dark surface maps to one of these four — never an ad-hoc black.
 
 ## Typography
 
