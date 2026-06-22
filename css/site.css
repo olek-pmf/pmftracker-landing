@@ -117,7 +117,7 @@
   animation: leadPop .22s cubic-bezier(.2, .8, .25, 1);
 }
 @keyframes leadPop { from { opacity: 0; transform: translateY(14px) scale(.98); } to { opacity: 1; transform: none; } }
-.lead-modal-x { position: absolute; top: .75rem; right: .9rem; background: none; border: none; font-size: 1.6rem; line-height: 1; color: #94a3b8; cursor: pointer; padding: .2rem; }
+.lead-modal-x { position: absolute; top: .75rem; right: .9rem; background: none; border: none; font-size: 1.6rem; line-height: 1; color: #64748b; cursor: pointer; padding: .2rem; }
 .lead-modal-x:hover { color: #475569; }
 .lead-title { font-size: 1.45rem; line-height: 1.2; color: var(--blog-ink, #0f172a); margin: 0 0 .5rem; letter-spacing: -.01em; }
 .lead-sub { font-size: 1rem; line-height: 1.55; color: var(--blog-muted, #64748b); margin: 0 0 1.25rem; }
@@ -126,7 +126,7 @@
 .lead-error { color: #dc2626; font-size: .85rem; margin: -.3rem 0 .6rem; }
 .lead-submit { width: 100%; border: none; cursor: pointer; font: inherit; font-weight: 600; }
 .lead-submit[disabled] { opacity: .65; cursor: default; }
-.lead-fine { font-size: .78rem; color: #94a3b8; text-align: center; margin: .8rem 0 0; }
+.lead-fine { font-size: .78rem; color: #64748b; text-align: center; margin: .8rem 0 0; }
 .lead-success { text-align: center; padding: .5rem 0 .3rem; }
 .lead-check { width: 54px; height: 54px; margin: 0 auto 1rem; border-radius: 50%; background: linear-gradient(135deg, #6366f1, #4f46e5); color: #fff; font-size: 1.6rem; display: flex; align-items: center; justify-content: center; }
 .lead-success-title { font-size: 1.35rem; color: var(--blog-ink, #0f172a); margin: 0 0 .5rem; }
@@ -144,3 +144,26 @@
 .lead-request-btn:hover { filter: brightness(1.05); }
 /* honeypot — off-screen, not display:none (so bots still "see" and fill it) */
 .lead-hp { position: absolute !important; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+
+/* ============================================================================
+   Accessibility & polish — Wave 1
+   ========================================================================== */
+/* B2 — visible keyboard focus on every interactive surface (mouse clicks stay clean) */
+@supports selector(:focus-visible){
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible,
+  select:focus-visible, summary:focus-visible, [tabindex]:focus-visible,
+  .button:focus-visible, .pmf-navdrop-toggle:focus-visible, .lead-request-btn:focus-visible{
+    outline: 3px solid #6366f1; outline-offset: 2px;
+  }
+}
+/* B1 — respect prefers-reduced-motion: pause the marquee, collapse transitions/animations */
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* C1 — give the marketing display headline more weight/punch (was 600) */
+.heading-style-h1{ font-weight: 700; }

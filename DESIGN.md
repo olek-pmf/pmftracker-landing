@@ -68,7 +68,7 @@ typography:
   display:
     fontFamily: Manrope
     fontSize: 'clamp(2.6rem, 6vw, 4.5rem)'
-    fontWeight: 600
+    fontWeight: 700
     lineHeight: 1.04
     letterSpacing: '-0.02em'
   h1:
@@ -159,6 +159,8 @@ motion:
   easing-ease: 'ease'
   modal-enter: 'opacity 220ms ease, transform 220ms cubic-bezier(0.2, 0.8, 0.25, 1)'
   hover-lift: 'transform 150ms ease, box-shadow 150ms ease'
+  focus-visible: '3px solid #6366f1, 2px offset'
+  reduced-motion: 'honored — animations and transitions collapse to ~0ms'
 
 gradients:
   # Signature pill button: near-black base with a soft inner top-glow (not flat).

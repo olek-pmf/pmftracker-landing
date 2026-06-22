@@ -426,7 +426,7 @@
 .cmp-table thead .cmp-col-us { color: var(--blog-indigo); border-top: 2px solid var(--blog-indigo); border-radius: 8px 8px 0 0; }
 .cmp-yes { color: var(--blog-indigo); font-weight: 800; }
 .cmp-no { color: #cbd5e1; font-weight: 700; }
-.cmp-partial { color: #94a3b8; font-size: .9rem; }
+.cmp-partial { color: #64748b; font-size: .9rem; }
 .cmp-note { font-size: .85rem; color: var(--blog-muted); margin-top: .75rem; text-align: center; }
 
 /* two-column "their stack vs ours" */
@@ -437,7 +437,7 @@
 .cmp-card h3 { font-size: 1.15rem; color: var(--blog-ink); margin: 0 0 .9rem; }
 .cmp-card ul { list-style: none; margin: 0; padding: 0; }
 .cmp-card li { font-size: .98rem; line-height: 1.5; color: var(--blog-body); padding: .4rem 0 .4rem 1.5rem; position: relative; }
-.cmp-card.is-them li::before { content: "—"; position: absolute; left: 0; color: #94a3b8; font-weight: 700; }
+.cmp-card.is-them li::before { content: "—"; position: absolute; left: 0; color: #64748b; font-weight: 700; }
 .cmp-card.is-us li::before { content: "✓"; position: absolute; left: 0; color: var(--blog-indigo); font-weight: 800; }
 .cmp-card .cmp-time { font-size: 1.5rem; font-weight: 800; color: var(--blog-ink); margin-top: 1rem; }
 @media (max-width: 640px) { .cmp-split { grid-template-columns: 1fr; } }
