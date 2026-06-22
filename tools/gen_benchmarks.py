@@ -56,7 +56,7 @@ BYLINE = '''    <div class="article-byline">
       <div class="article-byline-avatar"><img src="/images/au_profile_photo_2025-20copy-201-p-500.webp" width="44" height="44" alt="Olek Uznanski" loading="lazy"/></div>
       <div class="article-byline-text">
         <strong>Olek Uznanski · Founder, PMFtracker</strong>
-        <span>Product leader who's trained 200+ startups on product-market fit</span>
+        <span>Product leader who's trained 300+ startups on product-market fit</span>
       </div>
     </div>'''
 
@@ -77,7 +77,7 @@ def render_article(slug, title, desc, og_desc, kicker, h1, dek, tldr_items, body
     # schema
     article = {"@context":"https://schema.org","@type":"Article","headline":title.split(" | ")[0],
         "description":desc,"author":{"@type":"Person","name":"Olek Uznanski","jobTitle":"Founder, PMFtracker",
-        "image":B+"/images/au_profile_photo_2025-20copy-201.webp","description":"Product leader who has trained 200+ startups on product-market fit."},
+        "image":B+"/images/au_profile_photo_2025-20copy-201.webp","description":"Product leader who has trained 300+ startups on product-market fit."},
         "publisher":{"@type":"Organization","name":"PMFtracker","logo":{"@type":"ImageObject","url":B+"/images/links.avif"}},
         "mainEntityOfPage":url,"datePublished":"2026-06-21T09:00:00+00:00","dateModified":"2026-06-21T09:00:00+00:00",
         "image":B+"/images/og-image.avif"}
