@@ -1,0 +1,117 @@
+<!--
+  PMFtracker — Day-3 follow-up (onboarding nudge #2).
+  Send ~3 days after signup, IDEALLY ONLY to users who haven't activated yet
+  (no survey embedded / no responses collected). In Make, gate this with a filter
+  on your activation signal (e.g. Supabase "has_responses = false" or a PostHog event)
+  so you don't nudge people who already got their score.
+
+  HOW TO USE
+  • Paste this HTML into your Resend template / Make "Send an email (Resend)" body.
+  • Subject line:  "Your PMF score is one line of code away"
+  • Preheader is built in (hidden line at top of the body).
+  • Merge variable: {{first_name}}  (set a Make fallback of "there" if it can be empty).
+  • {{unsubscribe_url}}  → Resend unsubscribe link. Keep it.
+  • Send from a real, monitored address so the "just reply" line works.
+-->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#f5f5f7;margin:0;padding:32px 0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+  <tr>
+    <td align="center">
+
+      <!-- Preheader (hidden) -->
+      <div style="display:none;max-height:0;overflow:hidden;mso-hide:all;font-size:1px;line-height:1px;color:#f5f5f7;">
+        Paste one snippet, and the responses start landing in 48–72 hours. &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+      </div>
+
+      <table role="presentation" width="480" cellpadding="0" cellspacing="0" style="width:480px;max-width:480px;background-color:#ffffff;border-radius:16px;overflow:hidden;border:1px solid #ececf1;">
+
+        <!-- Brand header -->
+        <tr>
+          <td style="background-color:#4f46e5;padding:28px 32px;text-align:center;">
+            <span style="font-size:22px;font-weight:700;color:#ffffff;letter-spacing:-0.3px;">PMFtracker</span>
+          </td>
+        </tr>
+
+        <!-- Body -->
+        <tr>
+          <td style="padding:36px 32px 8px 32px;">
+            <h1 style="margin:0 0 12px 0;font-size:22px;line-height:1.3;color:#1d1b2e;font-weight:700;">Your PMF score is one line of code away</h1>
+            <p style="margin:0 0 8px 0;font-size:15px;line-height:1.6;color:#4d455e;">Hi {{first_name}},</p>
+            <p style="margin:0 0 20px 0;font-size:15px;line-height:1.6;color:#4d455e;">
+              A few days ago you joined PMFtracker to put a real number on your product-market fit. If you haven't embedded the survey yet, no judgment — but it's genuinely a 2-minute job, and it's the only thing between you and your first score.
+            </p>
+
+            <p style="margin:0 0 10px 0;font-size:15px;line-height:1.6;color:#4d455e;">It's this one line, dropped before your closing &lt;/body&gt; tag (or into Google Tag Manager):</p>
+
+            <!-- Code snippet -->
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 22px 0;">
+              <tr>
+                <td style="background-color:#f5f5f7;border:1px solid #ececf1;border-radius:8px;padding:12px 14px;font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace;font-size:12px;line-height:1.5;color:#1d1b2e;word-break:break-all;">
+                  &lt;script src="https://app.pmftracker.com/embed.js"&gt;&lt;/script&gt;
+                </td>
+              </tr>
+            </table>
+
+            <p style="margin:0 0 22px 0;font-size:15px;line-height:1.6;color:#4d455e;">
+              That's it. The survey shows up inside your product, targeted at engaged users, and responses start landing within <strong>48–72 hours</strong>. Your score builds itself from there.
+            </p>
+          </td>
+        </tr>
+
+        <!-- Proof + CTA -->
+        <tr>
+          <td style="padding:0 32px 8px 32px;">
+            <p style="margin:0 0 20px 0;font-size:15px;line-height:1.6;color:#4d455e;">
+              Superhuman didn't guess their way from a 22% to a 58% PMF score. They measured it, every cycle. This is where that starts.
+            </p>
+            <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0;">
+              <tr>
+                <td align="center" style="border-radius:10px;background-color:#4f46e5;">
+                  <a href="https://app.pmftracker.com/surveys/new" target="_blank"
+                     style="display:inline-block;padding:14px 28px;font-size:15px;font-weight:600;color:#ffffff;text-decoration:none;border-radius:10px;">
+                    Get your embed code &rarr;
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!-- Reassurance -->
+        <tr>
+          <td style="padding:14px 32px 4px 32px;">
+            <p style="margin:0;font-size:14px;line-height:1.6;color:#8b8497;">
+              You don't need traffic for this — you need your existing users. Even 40 engaged responses give you a real read.
+            </p>
+          </td>
+        </tr>
+
+        <!-- Personal note -->
+        <tr>
+          <td style="padding:20px 32px 4px 32px;">
+            <p style="margin:0 0 4px 0;font-size:14px;line-height:1.6;color:#4d455e;">
+              Not sure where to place the snippet, or which users to target? Reply and tell me what you're building — I'll help you get it live.
+            </p>
+            <p style="margin:8px 0 0 0;font-size:14px;line-height:1.6;color:#1d1b2e;font-weight:600;">
+              Olek<br/>
+              <span style="font-weight:400;color:#8b8497;">Founder, PMFtracker</span>
+            </p>
+          </td>
+        </tr>
+
+        <!-- Footer -->
+        <tr>
+          <td style="padding:24px 32px 28px 32px;border-top:1px solid #ececf1;">
+            <p style="margin:0 0 6px 0;font-size:12px;line-height:1.6;color:#a39fb0;">
+              You're receiving this because you created a PMFtracker account.
+              <a href="{{unsubscribe_url}}" target="_blank" style="color:#8b8497;text-decoration:underline;">Unsubscribe</a>.
+            </p>
+            <p style="margin:0;font-size:12px;line-height:1.6;color:#a39fb0;">
+              PMFtracker · <a href="https://www.pmftracker.com" target="_blank" style="color:#8b8497;text-decoration:underline;">pmftracker.com</a>
+            </p>
+          </td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+</table>

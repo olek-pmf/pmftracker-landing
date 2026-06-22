@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="robots" content="noindex,nofollow"/>
+<title>PMFtracker — Design Tokens & Drift Detector</title>
+
+<!-- The REAL site stylesheets, so we can render real components and measure
+     their computed values against the documented DESIGN.md tokens. -->
+<link href="css/pmftrackerr.webflow.shared.53ff0c310.css" rel="stylesheet"/>
+<link href="css/blog.css" rel="stylesheet"/>
+<link href="css/site.css" rel="stylesheet"/>
+
+<style>
+  :root{ --pg:#f6f7fb; --pink:#0f172a; --pmut:#64748b; --pline:#e6e8ef; --pcard:#fff; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--pg); color:var(--pink);
+        font-family:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif; }
+  .wrap{ max-width:1040px; margin:0 auto; padding:40px 24px 80px; }
+  header h1{ font-size:30px; letter-spacing:-.02em; margin:0 0 6px; }
+  header p{ color:var(--pmut); margin:0 0 4px; font-size:15px; }
+  h2.sec{ font-size:13px; text-transform:uppercase; letter-spacing:.09em; color:var(--pmut);
+          margin:48px 0 16px; padding-bottom:8px; border-bottom:1px solid var(--pline); }
+  .panel{ background:var(--pcard); border:1px solid var(--pline); border-radius:14px;
+          box-shadow:0 6px 28px rgba(29,27,46,.05); padding:20px; }
+  .grid{ display:grid; gap:14px; }
+  .cols-4{ grid-template-columns:repeat(4,1fr); } .cols-3{ grid-template-columns:repeat(3,1fr); }
+  @media(max-width:760px){ .cols-4,.cols-3{ grid-template-columns:repeat(2,1fr);} }
+  /* swatches */
+  .sw{ border:1px solid var(--pline); border-radius:12px; overflow:hidden; background:#fff; }
+  .sw .chip{ height:64px; } .sw .meta{ padding:8px 10px; }
+  .sw .nm{ font-size:12.5px; font-weight:700; } .sw .hx{ font-size:11.5px; color:var(--pmut); font-family:monospace; }
+  /* drift table */
+  table.drift{ width:100%; border-collapse:collapse; font-size:13.5px; }
+  table.drift th, table.drift td{ text-align:left; padding:10px 8px; border-bottom:1px solid var(--pline); vertical-align:middle; }
+  table.drift th{ font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--pmut); }
+  .dot{ display:inline-block; width:18px;height:18px;border-radius:5px;border:1px solid var(--pline);vertical-align:middle;margin-right:6px; }
+  code.v{ font-family:monospace; font-size:12.5px; }
+  .badge{ font-size:11px; font-weight:700; padding:3px 9px; border-radius:999px; white-space:nowrap; }
+  .ok{ background:#dcfce7; color:#15803d; } .drift{ background:#fee2e2; color:#b91c1c; } .info{ background:#e0e7ff; color:#4338ca; }
+  .summary{ display:flex; gap:10px; align-items:center; margin-bottom:14px; flex-wrap:wrap; }
+  .summary .big{ font-size:26px; font-weight:800; letter-spacing:-.02em; }
+  .typ{ padding:14px 0; border-bottom:1px solid var(--pline); }
+  .typ .lab{ font-size:11px; color:var(--pmut); font-family:monospace; }
+  .shadowbox{ height:90px; border-radius:14px; background:#fff; }
+  .radbox{ height:64px; background:linear-gradient(135deg,#6366f1,#4f46e5); }
+  .gradbox{ height:80px; border-radius:12px; }
+  .demo-row{ display:flex; gap:18px; align-items:center; flex-wrap:wrap; }
+  .note{ font-size:12.5px; color:var(--pmut); margin-top:10px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>PMFtracker — Design Tokens &amp; Drift Detector</h1>
+    <p>Source of truth: the tokens documented in <strong>DESIGN.md</strong>. This page renders them, then measures the live CSS and flags where the implementation has <em>drifted</em> from the docs.</p>
+    <p class="note">Serve from the project root (or open via the dev server) so the real stylesheets load. <code>noindex</code>, dev-only.</p>
+  </header>
+
+  <!-- ============ DRIFT DETECTOR ============ -->
+  <h2 class="sec">🔎 Drift detector — DESIGN.md vs. live CSS</h2>
+  <div class="panel">
+    <div class="summary" id="summary"></div>
+    <table class="drift">
+      <thead><tr><th>Token</th><th>Documented (DESIGN.md)</th><th>Live (computed)</th><th>Status</th></tr></thead>
+      <tbody id="driftBody"></tbody>
+    </table>
+    <p class="note">Colors are normalized to hex before comparing; lengths are normalized to px. A <span class="badge drift">DRIFT</span> means the rendered value no longer matches the documented token — reconcile by updating the CSS or the doc.</p>
+  </div>
+
+  <!-- ============ COLORS ============ -->
+  <h2 class="sec">Colors</h2>
+  <div class="grid cols-4" id="colorGrid"></div>
+
+  <!-- ============ TYPOGRAPHY ============ -->
+  <h2 class="sec">Typography</h2>
+  <div class="panel" id="typeBlock"></div>
+
+  <!-- ============ RADII ============ -->
+  <h2 class="sec">Radii</h2>
+  <div class="grid cols-4" id="radGrid"></div>
+
+  <!-- ============ SHADOWS ============ -->
+  <h2 class="sec">Shadows &amp; elevation</h2>
+  <div class="grid cols-3" id="shadowGrid"></div>
+
+  <!-- ============ GRADIENTS ============ -->
+  <h2 class="sec">Gradients &amp; surfaces</h2>
+  <div class="grid cols-3" id="gradGrid"></div>
+
+  <!-- ============ REAL COMPONENTS (measured) ============ -->
+  <h2 class="sec">Live components (measured by the detector)</h2>
+  <div class="panel">
+    <div class="demo-row">
+      <a href="#" id="demoBtn" class="button is-icon button-gradient w-inline-block" onclick="return false">
+        <div>Calculate score</div>
+        <div class="icon-1x1-small w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none"><path d="M3.36334 10H16.6967M16.6967 10L11.6967 5M16.6967 10L11.6967 15" stroke="#CDC9D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </a>
+      <span class="badge info">primary button (real)</span>
+    </div>
+    <div class="demo-row" style="margin-top:18px;">
+      <form class="lead-form" style="max-width:280px;width:100%;">
+        <input id="demoInput" type="email" placeholder="you@company.com"/>
+      </form>
+      <span class="badge info">input + focus ring (real)</span>
+    </div>
+    <div class="demo-row" style="margin-top:22px; align-items:stretch;">
+      <div class="blog-card" id="demoCard" style="max-width:220px;">
+        <div class="blog-card-tag">Sample</div>
+        <h2 style="font-size:17px;margin:.3rem 0;">Card surface</h2>
+        <p style="font-size:13px;">Light card — border + soft shadow, lifts on hover.</p>
+      </div>
+      <div class="cta-box" id="demoCta" style="max-width:280px;">
+        <h3>Dark CTA panel</h3>
+        <p style="font-size:13px;margin-top:6px;">surface-night gradient.</p>
+      </div>
+    </div>
+    <div class="demo-row" style="margin-top:22px;">
+      <button class="lead-request-btn" id="demoAccent">Accent gradient</button>
+      <div class="pmf-navdrop" id="demoDropWrap" style="position:relative;">
+        <div class="pmf-navdrop-menu" id="demoDrop" style="position:static;opacity:1;visibility:visible;transform:none;min-width:180px;"><a href="#" onclick="return false">Dropdown surface</a><a href="#" onclick="return false">Measured shadow</a></div>
+      </div>
+      <div class="lead-modal-card" id="demoModalCard" style="position:static;max-width:190px;padding:18px;">
+        <strong style="font-size:14px;">Modal card</strong>
+        <p style="font-size:12px;color:#64748b;margin:.3rem 0 0;">Deep elevation.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ SCORE GAUGE (signature component) ============ -->
+  <h2 class="sec">Signature: the PMF score gauge (real)</h2>
+  <div style="max-width:360px;">
+    <div class="pmf-calc-result">
+      <div class="pmf-calc-score">56%</div>
+      <div class="pmf-calc-total">18 valid responses</div>
+      <div class="pmf-calc-bar">
+        <div class="pmf-calc-bar-fill" style="width:56%;"></div>
+        <div class="pmf-calc-threshold"><span>40% = fit</span></div>
+      </div>
+      <div class="pmf-calc-verdict" data-tone="strong">Exceptional — deep must-have fit.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ---- DESIGN.md tokens (the documented source of truth) ---- */
+const T = {
+  colors: {
+    background:'#ffffff', 'background-soft':'#f8fafc', 'background-tint':'#eef2ff',
+    ink:'#0f172a', body:'#334155', muted:'#64748b', line:'#e2e8f0',
+    'on-dark':'#ffffff', 'on-dark-muted':'#cbd5e1', 'text-purple':'#443a59',
+    primary:'#4f46e5', 'primary-hover':'#4338ca', 'primary-bright':'#6366f1',
+    'primary-300':'#818cf8', 'primary-soft':'#eef2ff', 'primary-border':'#c7d2fe',
+    'brand-500':'#4d53c4', 'brand-700':'#2e3276', 'brand-900':'#0f1127',
+    'surface-dark':'#0f172a', 'surface-dark-indigo':'#312e81', 'surface-night':'#0a0826', 'hero-night':'#080331',
+    'accent-blue':'#2d62ff', 'accent-pink':'#dd23bb',
+    success:'#34d399', warning:'#fcd34d', danger:'#dc2626'
+  },
+  typography: {
+    display:{ size:'clamp(2.6rem,6vw,4.5rem)', weight:600, ls:'-0.02em', label:'display' },
+    h1:{ size:'2.4rem', weight:700, ls:'-0.02em', label:'h1' },
+    h2:{ size:'2rem', weight:700, ls:'-0.015em', label:'h2' },
+    h3:{ size:'1.25rem', weight:700, ls:'0', label:'h3' },
+    'body-lg':{ size:'1.12rem', weight:400, ls:'0', label:'body-lg' },
+    body:{ size:'1rem', weight:400, ls:'0', label:'body' },
+    eyebrow:{ size:'0.78rem', weight:700, ls:'0.08em', label:'eyebrow', upper:true },
+    metric:{ size:'3.4rem', weight:800, ls:'-0.03em', label:'metric' }
+  },
+  radii: { sm:'6px', DEFAULT:'10px', md:'12px', lg:'16px', xl:'18px', '2xl':'28px', pill:'6.25rem', full:'9999px' },
+  shadows: {
+    card:'0 6px 28px rgba(29,27,46,.05)',
+    'card-hover':'0 18px 40px -24px rgba(15,23,42,.35)',
+    raised:'0 24px 60px -36px rgba(15,23,42,.4)',
+    dropdown:'0 20px 50px -24px rgba(15,23,42,.4)',
+    modal:'0 40px 90px -30px rgba(15,23,42,.55)',
+    'focus-ring':'0 0 0 3px rgba(99,102,241,.15)'
+  },
+  gradients: {
+    'primary-button':'radial-gradient(84.92% 150% at 50% 138.75%, rgba(255,255,255,.24) 0%, rgba(255,255,255,0) 100%), #0a0826',
+    accent:'linear-gradient(135deg,#6366f1,#4f46e5)',
+    'surface-night':'linear-gradient(135deg,#0f172a 0%,#312e81 100%)',
+    'score-bar':'linear-gradient(90deg,#818cf8,#34d399)'
+  }
+};
+
+/* ---- helpers ---- */
+const ROOTPX = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+function hex(input){
+  if(!input) return null;
+  const el=document.createElement('span'); el.style.display='none'; el.style.color=input;
+  document.body.appendChild(el); const c=getComputedStyle(el).color; el.remove();
+  const m=c.match(/[\d.]+/g); if(!m) return null;
+  const [r,g,b]=m.map(Number);
+  return '#'+[r,g,b].map(x=>Math.round(x).toString(16).padStart(2,'0')).join('');
+}
+function cssVar(n){ return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); }
+function toPx(v){ const s=String(v).trim(); if(s.endsWith('rem'))return parseFloat(s)*ROOTPX; return parseFloat(s); }
+function compStyle(sel,prop){ const el=document.querySelector(sel); return el?getComputedStyle(el)[prop]:null; }
+
+/* ---- DRIFT CHECKS ---- */
+const colorVarChecks = [
+  ['ink','--blog-ink'], ['body','--blog-body'], ['muted','--blog-muted'], ['line','--blog-line'],
+  ['background-soft','--blog-bg-soft'], ['primary','--blog-indigo'], ['primary-soft','--blog-indigo-soft'],
+  ['primary-border','--blog-indigo-border'], ['on-dark','--base-color-neutral--white'],
+  ['brand-500','--_pmf_colors---producttrio-colors-indigo--500'],
+  ['brand-900','--_pmf_colors---producttrio-colors-indigo--900']
+];
+const rows=[];
+colorVarChecks.forEach(([tok,varName])=>{
+  const doc=hex(T.colors[tok]); const live=hex(cssVar(varName));
+  rows.push({ name:`colors.${tok}`, kind:'color', doc, live, ok: doc&&live&&doc===live });
+});
+/* component checks (rendered with real classes) */
+function colorRow(name, docHex, liveColor){ const live=hex(liveColor); return { name, kind:'color', doc:hex(docHex), live, ok: hex(docHex)===live }; }
+function lenRow(name, docVal, liveVal, tol=0.6){ const d=toPx(docVal), l=toPx(liveVal); return { name, kind:'len', doc:docVal, live:(isNaN(l)?String(liveVal):l+'px'), ok: !isNaN(d)&&!isNaN(l)&&Math.abs(d-l)<=tol }; }
+
+rows.push(lenRow('button-primary.rounded → radii.pill', T.radii.pill, compStyle('#demoBtn','borderRadius')));
+rows.push(colorRow('button-primary.surface → colors.surface-night', T.colors['surface-night'], compStyle('#demoBtn','backgroundColor')));
+rows.push(lenRow('input.rounded → radii.DEFAULT', T.radii.DEFAULT, compStyle('#demoInput','borderRadius')));
+rows.push(colorRow('input.border → #d8dee9', '#d8dee9', compStyle('#demoInput','borderTopColor')));
+/* shadow parsing — compares geometry (offsets/blur/spread in px) + base color, ignoring alpha-format noise */
+function parseShadow(str){
+  if(!str || str==='none') return null;
+  const cm=str.match(/rgba?\([^)]*\)|#[0-9a-fA-F]{3,8}/);
+  const color = cm ? hex(cm[0]) : null;
+  const rest = str.replace(/rgba?\([^)]*\)|#[0-9a-fA-F]{3,8}/g,'');
+  const lens = (rest.match(/-?\d*\.?\d+/g)||[]).map(Number).filter(n=>!isNaN(n));
+  return { lens, color };
+}
+function shadowRow(name, docVal, liveVal){
+  const d=parseShadow(docVal), l=parseShadow(liveVal);
+  const ok = !!(d&&l) && d.lens.length===l.lens.length &&
+             d.lens.every((v,i)=>Math.abs(v-(l.lens[i]??NaN))<=0.6) && d.color===l.color;
+  return { name, kind:'shadow', doc:docVal, live:liveVal||'—', ok };
+}
+/* gradient parsing — compares the SET of stop colors (normalized to hex) */
+function gradColors(str){
+  const out=[]; (String(str).match(/rgba?\([^)]*\)|#[0-9a-fA-F]{3,8}/g)||[]).forEach(c=>{ const h=hex(c); if(h) out.push(h); });
+  return out;
+}
+function gradRow(name, docGrad, liveBg){
+  const d=[...new Set(gradColors(docGrad))].sort(), l=[...new Set(gradColors(liveBg))].sort();
+  return { name, kind:'grad', doc:d.join(' · ')||'—', live:l.join(' · ')||'—', ok: d.length>0 && d.join()===l.join() };
+}
+
+/* extra brand / accent color variables */
+[['brand-700','--_pmf_colors---producttrio-colors-indigo--700'],
+ ['accent-blue','--base-color-brand--blue'],
+ ['accent-pink','--base-color-brand--pink']].forEach(([tok,v])=>{
+  const doc=hex(T.colors[tok]), live=hex(cssVar(v));
+  rows.push({ name:`colors.${tok}`, kind:'color', doc, live, ok: doc&&live&&doc===live });
+});
+
+/* more radii (real components) */
+rows.push(lenRow('card-light.rounded → radii.lg', T.radii.lg, compStyle('#demoCard','borderRadius')));
+rows.push(lenRow('card-dark.rounded → radii.xl', T.radii.xl, compStyle('#demoCta','borderRadius')));
+rows.push(lenRow('dropdown.rounded → radii.md', T.radii.md, compStyle('#demoDrop','borderRadius')));
+rows.push(lenRow('modal.rounded → radii.xl', T.radii.xl, compStyle('#demoModalCard','borderRadius')));
+
+/* shadows (elevation) */
+rows.push(shadowRow('card.shadow → shadows.card-hover', T.shadows['card-hover'], compStyle('#demoCard','boxShadow')));
+rows.push(shadowRow('dropdown.shadow → shadows.dropdown', T.shadows.dropdown, compStyle('#demoDrop','boxShadow')));
+rows.push(shadowRow('modal.shadow → shadows.modal', T.shadows.modal, compStyle('#demoModalCard','boxShadow')));
+
+/* gradients (real surfaces) */
+rows.push(gradRow('score-gauge → gradients.surface-night', T.gradients['surface-night'], compStyle('.pmf-calc-result','backgroundImage')));
+rows.push(gradRow('accent chip → gradients.accent', T.gradients.accent, compStyle('#demoAccent','backgroundImage')));
+rows.push(gradRow('score-bar → gradients.score-bar', T.gradients['score-bar'], compStyle('.pmf-calc-bar-fill','backgroundImage')));
+
+/* focus ring (programmatic focus reveals :focus styles) */
+(function(){
+  const inp=document.getElementById('demoInput'); if(!inp) return;
+  inp.focus({preventScroll:true});
+  rows.push(shadowRow('input:focus ring → shadows.focus-ring', T.shadows['focus-ring'], getComputedStyle(inp).boxShadow));
+  rows.push(colorRow('input:focus border → colors.primary-bright', T.colors['primary-bright'], getComputedStyle(inp).borderTopColor));
+  inp.blur();
+})();
+
+/* render drift table */
+function colorCell(h){ return h?`<span class="dot" style="background:${h}"></span><code class="v">${h}</code>`:'<code class="v">—</code>'; }
+const body=document.getElementById('driftBody'); let okN=0;
+rows.forEach(r=>{
+  if(r.ok) okN++;
+  const docHtml = r.kind==='color'?colorCell(r.doc):`<code class="v">${r.doc}</code>`;
+  const liveHtml = r.kind==='color'?colorCell(r.live):`<code class="v">${r.live??'—'}</code>`;
+  const badge = r.ok?'<span class="badge ok">IN SYNC</span>':'<span class="badge drift">DRIFT</span>';
+  body.insertAdjacentHTML('beforeend', `<tr><td><code class="v">${r.name}</code></td><td>${docHtml}</td><td>${liveHtml}</td><td>${badge}</td></tr>`);
+});
+const total=rows.length, drifted=total-okN;
+document.getElementById('summary').innerHTML =
+  `<span class="big">${okN}/${total}</span><span>in sync</span>` +
+  (drifted? `<span class="badge drift">${drifted} drifted</span>` : `<span class="badge ok">no drift detected</span>`);
+
+/* ---- GALLERY: colors ---- */
+const cg=document.getElementById('colorGrid');
+Object.entries(T.colors).forEach(([n,h])=>{
+  const dark=['ink','surface-dark','surface-dark-indigo','surface-night','hero-night','brand-700','brand-900','primary','primary-hover','danger','body'].includes(n);
+  cg.insertAdjacentHTML('beforeend',
+   `<div class="sw"><div class="chip" style="background:${h}"></div><div class="meta"><div class="nm">${n}</div><div class="hx">${h}</div></div></div>`);
+});
+/* typography */
+const tb=document.getElementById('typeBlock');
+Object.values(T.typography).forEach(s=>{
+  const fs = s.size.startsWith('clamp')? '3.4rem': s.size;
+  tb.insertAdjacentHTML('beforeend',
+   `<div class="typ"><div style="font-weight:${s.weight};font-size:${fs};letter-spacing:${s.ls};line-height:1.1;${s.upper?'text-transform:uppercase;':''}">${s.label==='metric'?'56%':'Measure product-market fit'}</div>
+    <div class="lab">${s.label} · ${s.size} · ${s.weight} · ls ${s.ls}</div></div>`);
+});
+/* radii */
+const rg=document.getElementById('radGrid');
+Object.entries(T.radii).forEach(([n,v])=>{
+  rg.insertAdjacentHTML('beforeend',
+   `<div class="sw"><div class="radbox" style="border-radius:${v}"></div><div class="meta"><div class="nm">${n}</div><div class="hx">${v}</div></div></div>`);
+});
+/* shadows */
+const sg=document.getElementById('shadowGrid');
+Object.entries(T.shadows).forEach(([n,v])=>{
+  sg.insertAdjacentHTML('beforeend',
+   `<div class="panel" style="box-shadow:none;background:#eef0f6;"><div class="shadowbox" style="box-shadow:${v}"></div><div class="meta" style="padding-top:12px;"><div class="nm">${n}</div><div class="hx">${v}</div></div></div>`);
+});
+/* gradients */
+const gg=document.getElementById('gradGrid');
+Object.entries(T.gradients).forEach(([n,v])=>{
+  gg.insertAdjacentHTML('beforeend',
+   `<div class="sw"><div class="gradbox" style="background:${v}"></div><div class="meta"><div class="nm">${n}</div><div class="hx" style="word-break:break-all">${v}</div></div></div>`);
+});
+</script>
+</body>
+</html>
