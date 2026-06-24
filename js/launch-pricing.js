@@ -25,7 +25,7 @@
         if (remaining > 0) {
           if (banner) {
             banner.textContent = "🔥 Launch pricing — " + remaining + " of " + total + " spots left";
-            banner.style.display = "";
+            banner.style.display = "inline-block";
           }
           return;
         }
@@ -33,7 +33,7 @@
         // Sold out: surface the message and switch the cards to list price only.
         if (banner) {
           banner.textContent = "Launch pricing has ended — standard pricing now applies";
-          banner.style.display = "";
+          banner.style.display = "inline-block";
         }
         // Hide the discounted amounts ($79 / $149).
         document.querySelectorAll(".plan-9, .plan-9-right").forEach(function (el) {
