@@ -235,3 +235,10 @@
 @media (max-width:900px){
   .problem-cards{ grid-template-columns:1fr; max-width:30rem; margin-inline:auto; }
 }
+
+/* Hero subtitle — larger, more readable */
+.main_hero .main-text {
+  font-size: 1.125rem;
+  line-height: 1.65;
+  max-width: 40rem;
+}
