@@ -44,6 +44,15 @@
           el.style.textDecoration = "none";
           el.style.opacity = "1";
         });
+        // Comparison table ("Detailed Feature Breakdown"): same flip to list price.
+        document.querySelectorAll(".cmp-launch").forEach(function (el) {
+          el.style.display = "none";
+        });
+        document.querySelectorAll(".cmp-list").forEach(function (el) {
+          el.style.textDecoration = "none";
+          el.style.opacity = "1";
+          el.style.marginRight = "0";
+        });
       })
       .catch(function () { /* leave the static launch pricing untouched */ });
   });
