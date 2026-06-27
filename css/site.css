@@ -242,14 +242,3 @@
   line-height: 1.65;
   max-width: 40rem;
 }
-
-/* Superhuman logo in the social-proof marquee. The supplied asset is a red raster
-   "core lockup", so we flatten it to a single-tone silhouette and fade it to sit at the
-   same weight as the strip's monochrome (#797889) vector wordmarks. Tune height/opacity
-   to taste if it reads slightly heavy or light next to its neighbours. */
-.marquee-superhuman {
-  height: 26px;
-  width: auto;
-  object-fit: contain;
-  filter: brightness(0) opacity(0.5);
-}
