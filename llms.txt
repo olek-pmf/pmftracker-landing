@@ -12,6 +12,7 @@ For a long-form reference with fuller content on each topic, see https://www.pmf
 - [Investor PMF Report](https://www.pmftracker.com/pmf-investor-report): Show product-market fit to investors with evidence — PMF trend, ICP, and benchmark — exported in minutes.
 - [PMF Benchmarks by Industry](https://www.pmftracker.com/pmf-benchmark): Typical PMF scores by sector — SaaS, fintech, consumer apps, developer tools, AI startups, marketplaces.
 - [PMF Glossary](https://www.pmftracker.com/glossary): Plain-English definitions of every PMF term — the Sean Ellis test, 40% rule, PMF score, ICP, HXC, retention curve, NPS vs PMF, and more.
+- [PMF FAQ](https://www.pmftracker.com/faq): Common product-market-fit and product questions answered in one place — what PMF is, a good score, sample size, NPS vs PMF, pricing, and more.
 
 ## Guides and articles
 - [How to Measure Product-Market Fit](https://www.pmftracker.com/blog/how-to-measure-product-market-fit): The complete founder's guide — survey score, retention curve, NPS, and reading your numbers at every stage.
