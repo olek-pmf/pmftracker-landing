@@ -1,0 +1,134 @@
+# PMFtracker — Full Reference
+
+> PMFtracker helps startups measure and prove product-market fit (PMF) using the Sean Ellis 40% survey method. Run the survey, calculate your PMF score, track it over time, find your ideal customer profile (ICP), and export investor-ready reports. The app lives at https://app.pmftracker.com and the marketing site at https://www.pmftracker.com.
+
+This file is the long-form companion to /llms.txt. It contains the substantive content an assistant needs to answer questions about product-market fit, the Sean Ellis method, and PMFtracker accurately, plus a curated index of every key page.
+
+---
+
+## What PMFtracker is
+
+PMFtracker is a SaaS product for founders who want to measure product-market fit rigorously instead of relying on gut feeling. It runs the Sean Ellis survey on your engaged users, calculates your PMF score against the 40% benchmark, tracks that score as a trend over time, segments respondents to reveal your ideal customer profile, and exports the result as an investor-ready report.
+
+The core insight behind the product: PMF is not a one-time moment you "reach." It is a number that moves — up when you serve your ideal customers well, down when you drift from them. Founders who keep PMF treat it like revenue: a metric watched on a cadence. Measuring it once tells you almost nothing; tracking the trend is the whole point.
+
+Pricing is one-time / lifetime — there is no subscription. The list price is **PMF Starter ($99)** and **PMF Startup Kit ($199)**, with a launch promo of **$79 / $149** for the first 100 customers. New users get a 14-day free trial with no credit card required. (app.pmftracker.com is the source of truth for current pricing.)
+
+---
+
+## The method: the Sean Ellis test
+
+The Sean Ellis test is the most-validated way to quantify product-market fit. You ask your users a single question:
+
+> "How would you feel if you could no longer use [product]?"
+
+with these answer options:
+- Very disappointed
+- Somewhat disappointed
+- Not disappointed
+- N/A — I no longer use it
+
+Your **PMF score** is the percentage of respondents who answer **"very disappointed,"** counting only valid responses (the N/A bucket is excluded). The benchmark, established by Sean Ellis from surveying hundreds of startups, is **40%**: products at or above 40% "very disappointed" have historically been able to grow sustainably; products well below it usually have not yet found fit.
+
+Formula: `PMF score = (very disappointed) / (very + somewhat + not disappointed) × 100`.
+
+Reading the bands:
+- **≥ 40%** — Strong PMF. You have fit; the priority shifts to growth and scaling.
+- **30–39%** — Close to PMF. Targeted improvements on the right segment can push you over 40%.
+- **< 30%** — Pre-PMF. Keep iterating on the product and your ICP before scaling spend.
+
+### Who to survey and how many responses
+Survey **engaged, activated users** — people who have genuinely experienced the product — not signups who never returned. Surveying the wrong cohort inflates or deflates the score and makes it meaningless. As a rule of thumb you want at least ~40 valid responses for a reliable read, and more for higher confidence. With too few responses the score swings wildly and shouldn't be trusted.
+
+### Why the "very disappointed" segment matters
+The "very disappointed" users are your core market — the people who would be genuinely upset to lose the product. They are your evangelists and the source of your best retention and word-of-mouth. The strategic move is to (1) double down on what this segment loves, (2) understand and convert the "somewhat disappointed" segment by removing their specific blockers, and (3) avoid over-indexing on the "not disappointed" segment, whose feedback will pull your roadmap away from fit.
+
+---
+
+## How the product works
+
+1. **Collect.** You embed a lightweight survey widget in your product, pre-loaded with the Sean Ellis template. It targets engaged users (optionally via PostHog cohorts), and you can also import responses you already collected in another tool (Typeform, SurveyMonkey, a spreadsheet, etc.) so PMFtracker can analyze them.
+2. **Track.** PMFtracker calculates your PMF score on the 40% rule and records it as a trend, with historical analysis and alerts when the score moves significantly. The trend — not a single number — is the asset.
+3. **Act.** It segments respondents into your ideal customer profile (ICP) and a High-Expectation Customer (HXC) profile, runs AI sentiment analysis on open-ended answers to surface what users love and what blocks the rest, and exports a polished, investor-ready report (score, trend, ICP, benchmark).
+
+### Key features
+- **Survey widget** — embed in your product, no engineering required; targets engaged users.
+- **PMF score on the 40% rule** — calculated automatically and tracked over time with trend analysis and forecasting.
+- **Automated alerts** — notified when your score moves materially, so you catch fit slipping early.
+- **ICP & AI insights** — automated segmentation, a High-Expectation Customer profile, and AI sentiment analysis of every open-ended answer.
+- **PostHog cohorts + imports** — target exactly the right users via PostHog, or import data from existing survey tools.
+- **Investor-ready reports** — export score, trend, and ICP as polished visuals for a deck or data room.
+- **Portfolio view (for VCs and accelerators)** — a standardized PMF score for every company on one scale, tracked over time, with founder-granted read-only access (score, trend, and AI insights — never raw responses).
+
+---
+
+## Key concepts (glossary)
+
+- **Product-market fit (PMF)** — the degree to which a product satisfies strong market demand. Marc Andreessen's classic framing: "being in a good market with a product that can satisfy that market." It is measurable, not just a feeling.
+- **Sean Ellis test / 40% rule** — surveying users with the "how would you feel if you could no longer use this" question and measuring the percentage who say "very disappointed"; 40%+ signals fit.
+- **PMF score** — the single number from the Sean Ellis test: % "very disappointed" among valid responses.
+- **Ideal Customer Profile (ICP)** — the specific segment that gets the most value from your product (and most often answers "very disappointed"). Building for them, and finding more of them, is how you raise PMF.
+- **High-Expectation Customer (HXC)** — Julie Supan's concept: the most discerning person in your target market who will love your product for its core benefit and tell others. PMFtracker derives an HXC profile from your "very disappointed" segment.
+- **Retention curve** — a cohort retention chart that flattens (rather than decaying to zero) is one of the strongest signals of fit; complements the survey score.
+- **NPS vs PMF** — NPS measures willingness to recommend among existing users; the PMF survey measures how essential the product is. They answer different questions — PMF is the better leading indicator of fit. See /blog/nps-vs-product-market-fit.
+- **Product death cycle** — building only the features customers explicitly ask for, which quietly kills products by avoiding the deeper job-to-be-done. See /blog/product-death-cycle.
+- **"No market need"** — the most common startup failure cause (~42% of failed startups), i.e., building something nobody wants; PMF measurement exists to catch this early.
+
+---
+
+## Tools (free)
+- **PMF Score Calculator** — https://www.pmftracker.com/pmf-score — enter Sean Ellis survey responses and instantly see your PMF score against the 40% rule.
+- **Sean Ellis Survey Template** — https://www.pmftracker.com/sean-ellis-survey — the complete survey with exact question wording, who to survey, how many responses you need, and how to score it.
+- **Investor PMF Report** — https://www.pmftracker.com/pmf-investor-report — show product-market fit to investors with evidence: PMF trend, ICP, and benchmark, exported in minutes.
+- **PMF Benchmarks by Industry** — https://www.pmftracker.com/pmf-benchmark — typical PMF scores by sector (SaaS, fintech, consumer apps, developer tools, AI startups, marketplaces).
+
+## Guides and articles
+- **How to Measure Product-Market Fit** — https://www.pmftracker.com/blog/how-to-measure-product-market-fit — the complete founder's guide: survey score, retention curve, NPS, and reading your numbers at every stage.
+- **The Sean Ellis 40% Rule** — https://www.pmftracker.com/blog/sean-ellis-40-percent-rule — the most-validated PMF test: the formula, who to survey, and what the 40% threshold means.
+- **How to Run a PMF Survey** — https://www.pmftracker.com/blog/how-to-run-a-pmf-survey — step by step: who to ask, when, how many responses, and the exact questions.
+- **How Many Responses Do You Need for a Reliable PMF Survey?** — https://www.pmftracker.com/blog/how-many-responses-pmf-survey — PMF survey sample size: the 40 and 100 thresholds, the margin of error at each sample size (±15 at 40, ±10 at 100, ±5 at ~385), and why engaged-user quality beats quantity.
+- **How to Improve Your PMF Score** — https://www.pmftracker.com/blog/how-to-improve-pmf-score — the iterative loop that takes a sub-40% score to a must-have product.
+- **What Is a Good PMF Score?** — https://www.pmftracker.com/blog/what-is-a-good-pmf-score — how to interpret your number against the 40% benchmark and by stage.
+- **How Superhuman Went From 22% to 58%** — https://www.pmftracker.com/blog/superhuman-pmf-engine — Rahul Vohra's exact PMF engine, and how to run it without custom tooling.
+- **What Is Product-Market Fit?** — https://www.pmftracker.com/blog/what-is-product-market-fit-definitions — four definitions from the people who coined it: Rachleff, Andreessen, Ries, and Blank.
+- **What PMF Feels Like** — https://www.pmftracker.com/blog/what-product-market-fit-feels-like — the three signals 25 iconic companies describe, and how to put a number on the feeling.
+- **NPS vs Product-Market Fit** — https://www.pmftracker.com/blog/nps-vs-product-market-fit — why they measure different things and which to trust for fit.
+- **Retention Curve vs PMF Survey** — https://www.pmftracker.com/blog/retention-curve-vs-pmf-survey — two complementary signals and how to read them together.
+- **42% of Startups Build Something Nobody Wants** — https://www.pmftracker.com/blog/no-market-need-ai-discovery — why "no market need" is still the #1 startup killer, and why AI made it worse.
+- **The Product Death Cycle** — https://www.pmftracker.com/blog/product-death-cycle — why building only requested features quietly kills products, and how to break out.
+- **Why Products Fail Despite Flawless Execution** — https://www.pmftracker.com/blog/why-products-fail-product-risks — the three product risks that sink most launches.
+- **Product-Market Fit Examples** — https://www.pmftracker.com/blog/product-market-fit-examples — how iconic companies found (and measured) fit.
+- **How Slack Measured Product-Market Fit** — https://www.pmftracker.com/blog/how-slack-measured-product-market-fit — Slack's 30%-very-disappointed threshold and what it teaches.
+- **How to Know If You Have Product-Market Fit** — https://www.pmftracker.com/blog/how-to-know-if-you-have-product-market-fit — the qualitative and quantitative signals together.
+- **Best PMF Survey Tools (2026)** — https://www.pmftracker.com/blog/best-pmf-survey-tools — the 8 best tools for running a PMF survey, and how to choose.
+
+## Comparisons
+- **PMFtracker vs PMFsurvey.com** — https://www.pmftracker.com/vs/pmfsurvey — one-time free score vs ongoing PMF tracking, ICP, and investor reports.
+- **PMFtracker vs Typeform + Spreadsheets** — https://www.pmftracker.com/vs/typeform-spreadsheet — manual stack vs an automated collect → score → report workflow.
+- **PMFtracker vs Survicate** — https://www.pmftracker.com/vs/survicate — general microsurveys vs purpose-built PMF measurement.
+- **PMFtracker vs Tally** — https://www.pmftracker.com/vs/tally — a form builder that collects answers vs a tool that calculates and tracks your score.
+- **PMFtracker vs SurveyMonkey** — https://www.pmftracker.com/vs/surveymonkey — a general survey suite vs a focused PMF tool for a one-time price.
+
+## For investors and accelerators
+- **PMFtracker for VCs** — https://www.pmftracker.com/for-vc — standardized PMF scores across a whole portfolio, on one scale, tracked over time. Free investor access.
+- **PMFtracker for Accelerators** — https://www.pmftracker.com/for-accelerators — a standardized PMF score for every startup in a cohort, tracked to demo day. Free program access.
+
+## Start
+- **Start free** — https://app.pmftracker.com/ — create an account and run your first PMF survey.
+- **Book a demo** — https://cal.com/pmftracker/product-demo — talk to the team.
+
+---
+
+## Frequently asked questions
+
+**What is product-market fit?** The degree to which a product satisfies strong market demand — measurable via the Sean Ellis survey, not just a feeling.
+
+**What is a good PMF score?** 40% or higher "very disappointed" on the Sean Ellis survey signals product-market fit. 30–39% is close; under 30% means keep iterating.
+
+**How many responses do I need?** Aim for at least ~40 valid responses from engaged users for a reliable score; more increases confidence.
+
+**How is PMF different from NPS?** NPS measures willingness to recommend; the PMF survey measures how essential the product is. PMF is the better leading indicator of fit.
+
+**How much does PMFtracker cost?** One-time / lifetime, no subscription. List price: PMF Starter $99 and PMF Startup Kit $199, with a launch promo of $79 / $149 for the first 100 customers. There is a 14-day free trial and no credit card required.
+
+**Do I need to be technical?** No — PMFtracker is built for non-technical founders. You embed a widget and the scoring, segmentation, and reporting are automated.
