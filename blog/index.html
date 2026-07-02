@@ -39,121 +39,138 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <p>The frameworks, survey templates, and real founder playbooks behind every PMF score — written for founders who need a number they (and their investors) can trust.</p>
     </header>
 
+    <div class="blog-toolbar" id="blogToolbar">
+      <div class="blog-search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="search" id="blogSearch" placeholder="Search 30 articles…" aria-label="Search articles"/>
+      </div>
+      <div class="blog-chips" role="group" aria-label="Filter by topic">
+        <button class="blog-chip is-active" data-cat="all" aria-pressed="true">All <span class="blog-chip-n">30</span></button>
+        <button class="blog-chip" data-cat="basics" aria-pressed="false">Basics <span class="blog-chip-n">4</span></button>
+        <button class="blog-chip" data-cat="measure" aria-pressed="false">Measuring <span class="blog-chip-n">7</span></button>
+        <button class="blog-chip" data-cat="frameworks" aria-pressed="false">Frameworks <span class="blog-chip-n">7</span></button>
+        <button class="blog-chip" data-cat="cases" aria-pressed="false">Case Studies <span class="blog-chip-n">3</span></button>
+        <button class="blog-chip" data-cat="discovery" aria-pressed="false">Discovery <span class="blog-chip-n">3</span></button>
+        <button class="blog-chip" data-cat="resources" aria-pressed="false">Resources <span class="blog-chip-n">6</span></button>
+      </div>
+    </div>
+    <p class="blog-count" id="blogCount" aria-live="polite"></p>
+
     <div class="blog-grid">
 
-      <a href="/blog/product-market-fit-examples" class="blog-card blog-card-featured">
+      <a href="/blog/product-market-fit-examples" data-cat="cases" class="blog-card blog-card-featured">
         <div class="blog-card-tag">Case Studies</div>
         <h2>Product-market fit examples: how 8 startups found (and proved) it</h2>
         <p>Superhuman dragged a 22% survey score to 58%. Slack hit 51%. The Dropbox demo video booked 75,000 signups overnight. Eight real companies, the moves that got them to fit — and the one through-line that connects all of them.</p>
         <span class="blog-card-meta">Read the case studies →</span>
       </a>
 
-      <a href="/blog/best-product-market-fit-books" class="blog-card">
+      <a href="/blog/best-product-market-fit-books" data-cat="resources" class="blog-card">
         <div class="blog-card-tag">Reading List</div>
         <h2>The 9 best product-market fit books, ordered by stage</h2>
         <p>Don't read all nine — read the one for the stage you're in. From The Mom Test and The Lean Startup to Olsen's PMF Pyramid and Crossing the Chasm.</p>
         <span class="blog-card-meta">Read more →</span>
       </a>
 
-      <a href="/blog/product-market-fit-statistics" class="blog-card">
+      <a href="/blog/product-market-fit-statistics" data-cat="resources" class="blog-card">
         <div class="blog-card-tag">Data</div>
         <h2>Product-market fit statistics: 15 numbers founders should know</h2>
         <p>The data behind PMF, sourced — from the 42% of startups that fail with no market need to the 40% benchmark, Slack's 51%, and Superhuman's 22% to 58%.</p>
         <span class="blog-card-meta">Read more →</span>
       </a>
 
-      <a href="/blog/how-to-achieve-product-market-fit" class="blog-card">
+      <a href="/blog/how-to-achieve-product-market-fit" data-cat="frameworks" class="blog-card">
         <div class="blog-card-tag">Guide</div>
         <h2>How to achieve product-market fit: a 7-step loop</h2>
         <p>PMF isn't a lightning strike — it's a loop you run on purpose. The seven steps from a narrow market and an MVP to a measured, validated 40%+ score.</p>
         <span class="blog-card-meta">Read more →</span>
       </a>
 
-      <a href="/blog/product-market-fit-checklist" class="blog-card">
+      <a href="/blog/product-market-fit-checklist" data-cat="frameworks" class="blog-card">
         <div class="blog-card-tag">Guide</div>
         <h2>The product-market fit checklist: 12 boxes to tick</h2>
         <p>Stop guessing whether you have PMF. Twelve concrete boxes across three tiers — the signals, the evidence, and what to clear before you scale.</p>
         <span class="blog-card-meta">Read more →</span>
       </a>
 
-      <a href="/blog/product-market-fit-survey-questions" class="blog-card">
+      <a href="/blog/product-market-fit-survey-questions" data-cat="measure" class="blog-card">
         <div class="blog-card-tag">Guide</div>
         <h2>Product-market fit survey questions: the exact 5 to ask</h2>
         <p>The one question that defines PMF, the three follow-ups that turn a score into a roadmap, exact wording, and the questions to avoid. Copy-paste ready.</p>
         <span class="blog-card-meta">Read more →</span>
       </a>
 
-      <a href="/blog/problem-solution-fit-vs-product-market-fit" class="blog-card">
+      <a href="/blog/problem-solution-fit-vs-product-market-fit" data-cat="basics" class="blog-card">
         <div class="blog-card-tag">PMF Fundamentals</div>
         <h2>Problem-solution fit vs product-market fit: the difference that saves years</h2>
         <p>They sound identical and get confused constantly. One proves people want your solution; the other proves the market pulls your product — and mistaking them costs founders years.</p>
         <span class="blog-card-meta">Read more →</span>
       </a>
 
-      <a href="/blog/product-market-fit-framework" class="blog-card">
+      <a href="/blog/product-market-fit-framework" data-cat="frameworks" class="blog-card">
         <div class="blog-card-tag">Framework</div>
         <h2>The product-market fit framework: 4 models, and the one to actually use</h2>
         <p>Four PMF frameworks compared — Olsen's Pyramid, the Sean Ellis test, the Superhuman engine, Balfour's Four Fits — and how to combine them into one you can run weekly.</p>
         <span class="blog-card-meta">Read more →</span>
       </a>
 
-      <a href="/blog/how-to-validate-product-market-fit" class="blog-card">
+      <a href="/blog/how-to-validate-product-market-fit" data-cat="frameworks" class="blog-card">
         <div class="blog-card-tag">Guide</div>
         <h2>How to validate product-market fit (without fooling yourself)</h2>
         <p>Measuring PMF gives you a number; validating proves it isn't a mirage. The triangulation method — say, do, grow — and the four false positives that bury startups.</p>
         <span class="blog-card-meta">Read more →</span>
       </a>
 
-      <a href="/blog/stages-of-product-market-fit" class="blog-card">
+      <a href="/blog/stages-of-product-market-fit" data-cat="frameworks" class="blog-card">
         <div class="blog-card-tag">Framework</div>
         <h2>The 4 stages of product-market fit (and how to know which you're in)</h2>
         <p>PMF isn't pass/fail — it's a journey. The four stages, the number that proves each one, and the two questions that place you on the map today.</p>
         <span class="blog-card-meta">Read more →</span>
       </a>
 
-      <a href="/blog/how-many-responses-pmf-survey" class="blog-card">
+      <a href="/blog/how-many-responses-pmf-survey" data-cat="measure" class="blog-card">
         <div class="blog-card-tag">Guide</div>
         <h2>How many responses do you need for a reliable PMF survey?</h2>
         <p>The honest math behind PMF survey sample size: the 40 and 100 thresholds, the real margin of error at each, and why 50 engaged users beat 500 random signups.</p>
         <span class="blog-card-meta">Read more →</span>
       </a>
 
-      <a href="/blog/how-to-know-if-you-have-product-market-fit" class="blog-card">
+      <a href="/blog/how-to-know-if-you-have-product-market-fit" data-cat="basics" class="blog-card">
         <div class="blog-card-tag">PMF Fundamentals</div>
         <h2>How to know if you have product-market fit: 6 signals</h2>
         <p>"You just know" isn't an answer. The six real signals operators look for — from the retention curve to the 40% survey — and the one you can measure this week.</p>
         <span class="blog-card-meta">Read more →</span>
       </a>
 
-      <a href="/blog/superhuman-pmf-engine" class="blog-card">
+      <a href="/blog/superhuman-pmf-engine" data-cat="cases" class="blog-card">
         <div class="blog-card-tag">Case Study</div>
         <h2>How Superhuman went from a 22% PMF score to 58%</h2>
         <p>Rahul Vohra turned one survey question into a growth engine, walking Superhuman's PMF score from 22% to 58% in three quarters. The exact play, step by step — no custom tooling.</p>
         <span class="blog-card-meta">Read more →</span>
       </a>
 
-      <a href="/blog/what-is-a-good-pmf-score" class="blog-card">
+      <a href="/blog/what-is-a-good-pmf-score" data-cat="measure" class="blog-card">
         <div class="blog-card-tag">Benchmarks</div>
         <h2>What's a good PMF score? The 40% benchmark, explained</h2>
         <p>Short answer: 40%. Where the benchmark comes from, how Slack (51%) and Superhuman (58%) compare, and the three things that matter more than the number itself.</p>
         <span class="blog-card-meta">Read more →</span>
       </a>
 
-      <a href="/blog/how-slack-measured-product-market-fit" class="blog-card">
+      <a href="/blog/how-slack-measured-product-market-fit" data-cat="cases" class="blog-card">
         <div class="blog-card-tag">Case Study</div>
         <h2>How Slack measured product-market fit: the 51% survey</h2>
         <p>An independent study surveyed 731 Slack users with one question — 51% would be "very disappointed" without it. What the score and the open-ends revealed.</p>
         <span class="blog-card-meta">Read more →</span>
       </a>
 
-      <a href="/blog/nps-vs-product-market-fit" class="blog-card">
+      <a href="/blog/nps-vs-product-market-fit" data-cat="measure" class="blog-card">
         <div class="blog-card-tag">Method Comparison</div>
         <h2>NPS vs the PMF survey: which measures product-market fit?</h2>
         <p>NPS measures whether people will recommend you. The Sean Ellis survey measures whether they'd be devastated to lose you. Why only one is built for PMF.</p>
         <span class="blog-card-meta">Read more →</span>
       </a>
 
-      <a href="/blog/retention-curve-vs-pmf-survey" class="blog-card">
+      <a href="/blog/retention-curve-vs-pmf-survey" data-cat="measure" class="blog-card">
         <div class="blog-card-tag">Method Comparison</div>
         <h2>Retention curve vs the Sean Ellis score</h2>
         <p>One is behavioral and lagging; the other gives you a number today. How the two most-trusted PMF signals compare — and when to lean on each.</p>
@@ -162,97 +179,102 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
-      <a href="/blog/best-pmf-survey-tools" class="blog-card">
+      <a href="/blog/best-pmf-survey-tools" data-cat="resources" class="blog-card">
         <div class="blog-card-tag">Tools &amp; Comparisons</div>
         <h2>8 best tools for creating a product-market fit survey (2026)</h2>
         <p>Most "PMF survey tools" are just form builders — they collect answers but never calculate or track your score. The 8 worth knowing, what each is actually good at, and how to choose.</p>
         <span class="blog-card-meta">Read more →</span>
       </a>
 
-      <a href="/blog/no-market-need-ai-discovery" class="blog-card">
+      <a href="/blog/no-market-need-ai-discovery" data-cat="discovery" class="blog-card">
         <div class="blog-card-tag">Startups &amp; 0 → 1</div>
         <h2>42% of startups build something nobody wants — and AI is making it worse</h2>
         <p>"No market need" is still the #1 startup killer. Building got 10x cheaper; the hardest part didn't. Here's the one number that tells you, early, if you're about to become a statistic.</p>
         <span class="blog-card-meta">Read more →</span>
       </a>
 
-      <a href="/blog/what-product-market-fit-feels-like" class="blog-card">
+      <a href="/blog/what-product-market-fit-feels-like" data-cat="basics" class="blog-card">
         <div class="blog-card-tag">Framework</div>
         <h2>What product-market fit actually feels like (signs from 25 iconic companies)</h2>
         <p>"You'll just know" is useless advice in the fog. The companies that found PMF describe three specific signals — and why it took them about two years. Plus how to put a number on the feeling.</p>
         <span class="blog-card-meta">Read more →</span>
       </a>
 
-      <a href="/blog/why-products-fail-product-risks" class="blog-card">
+      <a href="/blog/why-products-fail-product-risks" data-cat="discovery" class="blog-card">
         <div class="blog-card-tag">Product Discovery</div>
         <h2>Why products fail despite flawless execution</h2>
         <p>You can hit every sprint and still build something nobody wants. The winners don't optimize for velocity — they kill the riskiest assumption first. The 3 risks that sink most launches.</p>
         <span class="blog-card-meta">Read more →</span>
       </a>
 
-      <a href="/blog/what-is-product-market-fit-definitions" class="blog-card">
+      <a href="/blog/what-is-product-market-fit-definitions" data-cat="basics" class="blog-card">
         <div class="blog-card-tag">Framework</div>
         <h2>What is product-market fit, really? 4 definitions from the people who coined it</h2>
         <p>PMF is the most-used phrase in startups and the least agreed-on. Rachleff, Andreessen, Ries, Blank — the four definitions that matter, the gut test for when you have it, and why a definition isn't enough.</p>
         <span class="blog-card-meta">Read more →</span>
       </a>
 
-      <a href="/blog/product-death-cycle" class="blog-card">
+      <a href="/blog/product-death-cycle" data-cat="discovery" class="blog-card">
         <div class="blog-card-tag">Product Discovery</div>
         <h2>The Product Death Cycle: why "what features do you want?" is killing your product</h2>
         <p>Asking customers which features they want feels customer-obsessed. It's the fastest way to build a product nobody uses. The cycle, why it traps good teams, and the one question to ask instead.</p>
         <span class="blog-card-meta">Read more →</span>
       </a>
 
-      <a href="/blog/sean-ellis-40-percent-rule" class="blog-card">
+      <a href="/blog/sean-ellis-40-percent-rule" data-cat="frameworks" class="blog-card">
         <div class="blog-card-tag">Framework</div>
         <h2>The Sean Ellis 40% Rule: everything founders need to know</h2>
         <p>One question predicts whether your startup will grow. We break down the formula, the history, the benchmarks, and what to do when your score lands below 40%.</p>
         <span class="blog-card-meta">Read more →</span>
       </a>
 
-      <a href="/blog/how-to-measure-product-market-fit" class="blog-card">
+      <a href="/blog/how-to-measure-product-market-fit" data-cat="measure" class="blog-card">
         <div class="blog-card-tag">Complete Guide</div>
         <h2>How to measure product-market fit in 2026 (the complete guide)</h2>
         <p>Survey score, retention curve, and the two signals that actually prove fit. The end-to-end playbook from your first 40 responses to a Series A.</p>
         <span class="blog-card-meta">Read more →</span>
       </a>
 
-      <a href="/blog/how-to-run-a-pmf-survey" class="blog-card">
+      <a href="/blog/how-to-run-a-pmf-survey" data-cat="measure" class="blog-card">
         <div class="blog-card-tag">How-To</div>
         <h2>How to run a PMF survey (step by step, with the exact questions)</h2>
         <p>Who to survey, when, how many responses you need, and the precise wording that makes the Sean Ellis test work. Plus the template you can launch in five minutes.</p>
         <span class="blog-card-meta">Read more →</span>
       </a>
 
-      <a href="/blog/how-to-improve-pmf-score" class="blog-card">
+      <a href="/blog/how-to-improve-pmf-score" data-cat="frameworks" class="blog-card">
         <div class="blog-card-tag">How-To</div>
         <h2>How to improve your PMF score (from below 40% to funded)</h2>
         <p>A score below 40% isn't a verdict — it's a to-do list. The iterative loop that took real startups from "meh" to must-have, broken into steps you can run this month.</p>
         <span class="blog-card-meta">Read more →</span>
       </a>
 
-      <a href="/startup-pmf-tracking" class="blog-card">
+      <a href="/startup-pmf-tracking" data-cat="resources" class="blog-card">
         <div class="blog-card-tag">For Startups</div>
         <h2>PMF tracking for startups: measure, track, and prove product-market fit</h2>
         <p>Why founders track their PMF score like revenue — and the Collect → Track → Act loop that turns scattered feedback into a number you (and your investors) can trust.</p>
         <span class="blog-card-meta">Read the guide →</span>
       </a>
 
-      <a href="/vs/pmfsurvey" class="blog-card">
+      <a href="/vs/pmfsurvey" data-cat="resources" class="blog-card">
         <div class="blog-card-tag">Comparison</div>
         <h2>PMFtracker vs PMFsurvey.com: which PMF survey tool is right for you?</h2>
         <p>PMFsurvey gives you a free one-time Sean Ellis score. PMFtracker tracks it over time, finds your ICP, and exports investor-ready reports. An honest side-by-side.</p>
         <span class="blog-card-meta">Compare →</span>
       </a>
 
-      <a href="/vs/typeform-spreadsheet" class="blog-card">
+      <a href="/vs/typeform-spreadsheet" data-cat="resources" class="blog-card">
         <div class="blog-card-tag">Comparison</div>
         <h2>PMFtracker vs Typeform + spreadsheets: stop tracking PMF by hand</h2>
         <p>You can cobble PMF tracking together from a survey tool and a Google Sheet. You'll just spend hours on it and quietly stop. The manual stack vs the automated loop.</p>
         <span class="blog-card-meta">Compare →</span>
       </a>
 
+    </div>
+
+    <div class="blog-noresults" id="blogNoResults" hidden>
+      <p>No articles match. Try a different search or topic.</p>
+      <button class="blog-chip" id="blogClear">Clear filters</button>
     </div>
   </div>
 </main>
@@ -268,5 +290,52 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KS6486GZ"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+<script>
+(function(){
+  var cards=[].slice.call(document.querySelectorAll('.blog-card'));
+  var chips=[].slice.call(document.querySelectorAll('.blog-chip[data-cat]'));
+  var search=document.getElementById('blogSearch');
+  var count=document.getElementById('blogCount');
+  var noRes=document.getElementById('blogNoResults');
+  var clear=document.getElementById('blogClear');
+  var bar=document.getElementById('blogToolbar');
+  var activeCat='all', total=cards.length;
+  function apply(animate){
+    var q=(search.value||'').trim().toLowerCase(), shown=0;
+    cards.forEach(function(card){
+      var okCat=activeCat==='all'||card.getAttribute('data-cat')===activeCat;
+      var okQ=!q||card.textContent.toLowerCase().indexOf(q)!==-1;
+      var show=okCat&&okQ;
+      card.classList.toggle('is-hidden',!show);
+      if(show) shown++;
+    });
+    count.textContent=(shown===total?('Showing all '+total+' articles'):(shown+' of '+total+' article'+(shown===1?'':'s')));
+    noRes.hidden=shown!==0;
+    if(animate){
+      cards.filter(function(c){return !c.classList.contains('is-hidden');}).forEach(function(c,i){
+        c.style.animation='none'; void c.offsetWidth;
+        c.style.animation='blogCardIn .34s ease both';
+        c.style.animationDelay=Math.min(i*22,260)+'ms';
+      });
+    }
+  }
+  chips.forEach(function(chip){
+    chip.addEventListener('click',function(){
+      chips.forEach(function(c){c.classList.remove('is-active');c.setAttribute('aria-pressed','false');});
+      chip.classList.add('is-active');chip.setAttribute('aria-pressed','true');
+      activeCat=chip.getAttribute('data-cat');
+      try{history.replaceState(null,'',activeCat==='all'?location.pathname:location.pathname+'?cat='+activeCat);}catch(e){}
+      apply(true);
+    });
+  });
+  var t; search.addEventListener('input',function(){clearTimeout(t);t=setTimeout(function(){apply(false);},90);});
+  if(clear){clear.addEventListener('click',function(){search.value='';chips[0].click();});}
+  if(bar){var onScroll=function(){bar.classList.toggle('is-stuck',bar.getBoundingClientRect().top<=0.5);};
+    window.addEventListener('scroll',function(){window.requestAnimationFrame(onScroll);},{passive:true});onScroll();}
+  var m=(location.search.match(/[?&]cat=([a-z]+)/)||[])[1];
+  if(m){var tg=chips.filter(function(c){return c.getAttribute('data-cat')===m;})[0];if(tg){tg.click();return;}}
+  apply(false);
+})();
+</script>
 </body>
 </html>

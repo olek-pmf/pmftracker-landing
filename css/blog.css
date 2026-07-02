@@ -529,3 +529,61 @@
     repeating-linear-gradient(to bottom, rgba(255,255,255,.035) 0 1px, transparent 1px 38px),
     linear-gradient(135deg, #0f172a 0%, #312e81 100%);
 }
+
+
+/* ==========================================================================
+   Blog index — topic filter toolbar (chips + instant search)
+   ========================================================================== */
+.blog-toolbar{
+  position: sticky; top: 0; z-index: 50;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.25rem;
+  margin: 0 0 1rem; padding: .9rem 0;
+  background: rgba(255,255,255,.82);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.blog-toolbar.is-stuck{ border-bottom-color: var(--blog-line); box-shadow: 0 14px 26px -24px rgba(15,23,42,.5); }
+.blog-search{ position: relative; flex: 1 1 260px; min-width: 220px; }
+.blog-search svg{
+  position: absolute; left: .95rem; top: 50%; transform: translateY(-50%);
+  width: 18px; height: 18px; color: var(--blog-muted); pointer-events: none;
+}
+.blog-search input{
+  width: 100%; box-sizing: border-box; font: inherit; font-size: .98rem;
+  padding: .72rem .9rem .72rem 2.6rem;
+  border: 1px solid var(--blog-line); border-radius: 999px;
+  background: #fff; color: var(--blog-ink);
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+.blog-search input::placeholder{ color: var(--blog-muted); }
+.blog-search input:focus{ outline: none; border-color: var(--blog-indigo); box-shadow: 0 0 0 3px rgba(99,102,241,.15); }
+.blog-chips{ display: flex; flex-wrap: wrap; gap: .5rem; }
+.blog-chip{
+  font: inherit; font-size: .86rem; font-weight: 600; cursor: pointer;
+  display: inline-flex; align-items: center; gap: .4rem; white-space: nowrap;
+  padding: .5rem .9rem; border-radius: 999px;
+  color: var(--blog-body); background: #fff; border: 1px solid var(--blog-line);
+  transition: background .15s ease, color .15s ease, border-color .15s ease, transform .08s ease;
+}
+.blog-chip:hover{ background: var(--blog-indigo-soft); border-color: var(--blog-indigo-border); color: var(--blog-indigo); }
+.blog-chip:active{ transform: translateY(1px); }
+.blog-chip.is-active{ background: var(--blog-indigo); border-color: var(--blog-indigo); color: #fff; }
+.blog-chip-n{ font-size: .72rem; font-weight: 700; opacity: .55; }
+.blog-chip.is-active .blog-chip-n{ opacity: .85; }
+.blog-count{ font-size: .85rem; color: var(--blog-muted); margin: 0 0 1.5rem; }
+.blog-card.is-hidden{ display: none !important; }
+.blog-noresults{ text-align: center; padding: 3rem 1rem 4rem; color: var(--blog-muted); }
+.blog-noresults p{ font-size: 1.05rem; margin: 0 0 1.1rem; }
+.blog-noresults .blog-chip{ display: inline-flex; }
+@keyframes blogCardIn{ from{ opacity: 0; transform: translateY(8px); } to{ opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce){ .blog-card{ animation: none !important; } }
+@media (max-width: 640px){
+  .blog-toolbar{ gap: .75rem; padding: .75rem 0; }
+  .blog-search{ flex-basis: 100%; }
+}
+
+/* Nav is fixed at <=991px (blog-shell gets padding-top), so drop sticky there to avoid overlap */
+@media (max-width: 991px){
+  .blog-toolbar{ position: static; background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; box-shadow: none; border-bottom-color: transparent; }
+}
